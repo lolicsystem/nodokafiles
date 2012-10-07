@@ -15,7 +15,7 @@ define KBD112
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 109 日本語キーボード定義
 #
-include "add-mouse-gamepad.nodoka"
+#include "add-mouse-gamepad.nodoka"
 
 def key Esc Escape			=    0x01
 def key _1				=    0x02 # 1!
