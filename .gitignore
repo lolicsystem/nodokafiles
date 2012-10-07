@@ -1,0 +1,9 @@
+#
+# Git treats *.nodoka files only.
+#
+
+/*
+/.*
+
+!*.nodoka
+!.gitignore
