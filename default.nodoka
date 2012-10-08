@@ -263,6 +263,10 @@ window	ExplorerList /EXPLORER.*:SHELLDLL_DefView:.*SysListView32$/ \
  key C-S-Z		= &Sync&WindowMaximize	# ウィンドウの最大化
  key C-A-Z		= C-&WindowMaximize	# ウィンドウの全画面化
  key M-E		= $Explorer/show-folder-bar # フォルダを表示
+ key C-S-A		= C-A			# すべてを選択
+
+window	ExplorerList2 /EXPLORER.*:SHELLDLL_DefView:.*DirectUIHWND$/ \
+			: ExplorerList
 
 window	ExplorerTree /EXPLORER.*:BaseBar:.*SysTreeView32$/ : SysTreeView32
  key S-R		= F2			# 名前の変更
@@ -273,6 +277,7 @@ window	ExplorerTree /EXPLORER.*:BaseBar:.*SysTreeView32$/ : SysTreeView32
 window	InternetExplorer /:Internet Explorer_Server$/ : EmacsEdit
  key C-S-Z		= &Sync&WindowMaximize	# ウィンドウの最大化
  key C-A-Z		= C-&WindowMaximize	# ウィンドウの全画面化
+ key C-W                = C-W
 
 # Yamy チケット #18663 を参照のこと
 # http://es.sourceforge.jp/ticket/browse.php?group_id=4424&tid=18663
