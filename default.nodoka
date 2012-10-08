@@ -75,10 +75,10 @@ keymap Global
    key C-S-V		= &WindowMoveVisibly	# ウィンドウを見える位置へ移動
  endif
 
- if ( KBD109 ) and ( ! KBD104on109 )
-   key *半角/全角	= *Esc			# Esc と半角/全角の入れ替え
-   key *Esc		= *半角/全角		#	〃
- endif
+# if ( KBD109 ) and ( ! KBD104on109 )
+#   key *半角/全角	= *Esc			# Esc と半角/全角の入れ替え
+#   key *Esc		= *半角/全角		#	〃
+# endif
 
  if ( KBD109 )
    mod control += 英数				# 英数を Control に
@@ -103,8 +103,20 @@ keymap Global
    key C-→		= W-→			#	〃
  endif
 
+ key A-C-W		= LWin
+ key A-C-R		= RButton
+
 keymap2 GlobalEscape : Global = &KeymapParent
  event prefixed		= &HelpMessage("Global", "ESC-")
+ event before-key-down	= &HelpMessage
+ key M-C-G		= &Ignore
+ key M-B		= C-Left		# ←(単語)
+ key M-F		= C-Right		# →(単語)
+ key M-V		= Prior			# 前頁
+ key M-D		= S-C-Right C-X		# 単語削除
+
+keymap2 GlobalCtrl : Global = &KeymapParent
+ event prefixed		= &HelpMessage("Global", "CTRL-")
  event before-key-down	= &HelpMessage
  key M-C-G		= &Ignore
 
@@ -164,9 +176,9 @@ keymap2	GeneralC-X : EmacsC-X
  key C-W		= LAlt F A		# 名前を付けて保存(A)...
  key C-F		= C-O			# 開く(O)...
  key K			= C-N			# 新規作成(N)
- key C-C		= LAlt F X		# 終了(X)
+# key C-C		= LAlt F X		# 終了(X)
 # key C-C		= A-Q			# 終了(X)
-# key C-C		= $WindowClose		# 終了(X)
+ key C-C		= $WindowClose		# 終了(X)
 
 
 ## ダイアログボックス .........................................................
@@ -278,8 +290,8 @@ keymap Emacsen : Global
  key C-Yen		= &Default
  if ( MAP-ESCAPE-TO-META )			# ESC が M- になるのを阻止する
    if ( KBD109 ) and ( ! KBD104on109 )
-     key *半角/全角	= *Esc
-     key *Esc		= *半角/全角
+#     key *半角/全角	= *Esc
+#     key *Esc		= *半角/全角
    else
      key Escape		= &Default
    endif
