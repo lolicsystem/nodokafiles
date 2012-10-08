@@ -335,11 +335,39 @@ window	Notepad /:Notepad:Edit$/ : EmacsEdit
 ## Becky! Internet Mail .......................................................
 ## http://www.rimarts.co.jp/index-j.html
 
-window BeckyInternetMail /Rebecca\.exe:BeckyComposeFrameClass:/ : EmacsEdit
- if ( !ZXCV ) key C-X	= &Prefix(GeneralC-X)
+keymap2	BeckyC-X : GeneralC-X
+ key C-J	= C-K C-J		# [ C-X C-J ] 折り返しON/OFF
 
-window BeckyInternetMail2 /B2\.exe:Becky2ComposeFrame:/ : EmacsEdit
- if ( !ZXCV ) key C-X	= &Prefix(GeneralC-X)
+keymap2	BeckyG   : GeneralC-X
+ key G		= Home			# [ G G ]文頭
+
+keymap  BeckyMove : EmacsEdit
+  key C-S-B	= C-S-B
+  key C-B	= C-B
+  key C-Q	= C-Q
+  key C-L	= C-L
+  key J		= Down
+  key K		= Up
+  key S-J	= WheelBackward
+  key S-K	= WheelForward
+  key *M	= LButton
+  key C-X	= &Prefix(BeckyC-X)
+
+window BeckyFolderList /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:#32770/ : BeckyMove
+window BeckyMailList   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:SysListView32$/ : BeckyMove
+  key S-G	= End
+  key G         = &Prefix(BeckyG)
+  key S-C-A	= C-A			# Select All
+window BeckyMailRead   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:#32770/ : BeckyMove
+  key S-G	= End
+  key G         = &Prefix(BeckyG)
+  key S-C-A	= C-A			# Select All
+
+window BeckyCompose /B2\.exe:Becky2ComposeFrame:/ : EmacsEdit
+  if ( !ZXCV ) key C-X	= &Prefix(BeckyC-X)
+
+window BeckyEdit    /B2\.exe:Becky2MainFrame:.*:Edit/ : EmacsEdit
+  if ( !ZXCV ) key C-X	= &Prefix(GeneralC-X)
 
 
 ## Microsoft Power Point ......................................................
