@@ -113,7 +113,9 @@ keymap2 GlobalEscape : Global = &KeymapParent
  key M-B		= C-Left		# ←(単語)
  key M-F		= C-Right		# →(単語)
  key M-V		= Prior			# 前頁
- key M-D		= S-C-Right C-X		# 単語削除
+ key M-D		= S-C-Right C-X		# 単語削除(右)
+ key M-BS		= S-C-Left C-X		# 単語削除(左)
+
 
 keymap2 GlobalCtrl : Global = &KeymapParent
  event prefixed		= &HelpMessage("Global", "CTRL-")
