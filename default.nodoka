@@ -315,16 +315,6 @@ window	Notepad /:Notepad:Edit$/ : EmacsEdit
  key M-J		= C-G			# 行へ移動
 
 
-## ASTEC-X ....................................................................
-## http://www.astec.co.jp/
-
- keyseq $ASTEC-X/copy-to-x	= &PostMessage(ToItself, 274, 16, 0)
-
-window	ASTEC-X /:ASTEC-X$/ : Global
- key C-Yen		= &Default
- key *IC-IL-C-Yen	= $ToggleIME		# IMEがオンならばIMEをオフ
-
-
 ## Becky! Internet Mail .......................................................
 ## http://www.rimarts.co.jp/index-j.html
 
@@ -347,11 +337,6 @@ window	PowerPoint /POWERPNT\.EXE:.*:(paneClassDC|REComboBox20W|RichEdit20W)$/\
 window	PowerPoint2 /POWERPNT\.EXE:PP9FrameClass.*/ : EmacsEdit
  if ( !ZXCV ) key C-X	= &Prefix(PowerPointC-X)
 
-## Microsoft Visual Basic 6.0 .................................................
-
-window	VisualBasic /vb6\.exe:.*:VbaWindow$/ : EmacsEdit
- if ( !ZXCV ) key C-X	= &Prefix(GeneralC-X)
-
 
 ## Microsoft Word .............................................................
 
@@ -365,40 +350,10 @@ window	MicrosoftExcel /EXCEL\.EXE:XLMAIN:/ : EmacsEdit
  if ( !ZXCV ) key C-X	= &Prefix(GeneralC-X)
 
 
-## Microsoft Pinball ..........................................................
-
-window MSPinball /PINBALL\.EXE:1c7c22a0-9576-11ce-bf80-444553540000$/ : Global
- key A-Enter		= F4
-
-
-## Netscape Navigator .........................................................
-## http://www.netscape.com/
-
-window	NetscapeNavigator /Netscape\.exe:/ : Global
- key C-H		= BackSpace		# BackSpace
- key C-S		= C-F			# 検索
-
-
 ## Mozilla ....................................................................
 ## http://www.mozilla.org/
 
 window	Mozilla /:MozillaWindowClass$/ : EmacsEdit
-
-
-## Personal Dictionary ........................................................
-## http://member.nifty.ne.jp/TaN/
-
-window	PersonalDictionary /PDICW32\.EXE:PDICW:ComboBox:Edit/ : EmacsEdit
- key C-K		= S-End S-Delete	# 行末まで削除
- key C-Y		= S-Insert		# PASTE
-
-
-## Real Player ................................................................
-## http://www.real.com/
-
-window RealPlayer /realplay.exe:PNGUIClass/ : Global
- key A-Enter		= LAlt V Z F
- key C-R		= C-P
 
 
 ## TeraTerm ...................................................................
@@ -414,146 +369,9 @@ window	TeraTerm /TTermPRO\.exe:VTWin32$/ : Global
  endif
 
 
-## Waffle .....................................................................
-## http://sakura.tsg.ne.jp/~tjkawa/witalk2/
-## Emacs 風キーバインディングにしておくこと
-
- keyseq	$WaffleMark/cancel		= Left Right
-
-window	Waffle /WITALK2\.EXE:.*:RichEdit(20A)?$/ : Global
-keymap2	WaffleMark : Waffle = $WaffleMark/cancel &KeymapParent
-
-keymap	Waffle
- key Home		= &Default		# 文頭
- key End		= &Default		# 文末
- key C-Space		= &Prefix(WaffleMark)	# Mark
- key C-A		= &Default		# 行頭
- key C-B		= &Default		# ←
- key C-C		= &Default		# (Waffle Prefix)
- key M-B		= &Default		# ←(単語)
- key C-D		= &Default		# 削除
- key M-D		= &Default		# 削除(単語)
- key C-E		= &Default		# 行末
- key C-F		= &Default		# →
- key M-F		= &Default		# →(単語)
- key C-G		= &Default		# CANCEL
- key C-H		= &Default		# BS
- key C-J		= &Default		# RETURN
- key C-K		= &Default		# 行末まで削除
- key M-L		= &Default		# 小文字
- key C-M		= &Default		# RETURN
- key C-N		= &Default		# ↓
- key C-O		= &Default		# 一行増やす
- key C-P		= &Default		# ↑
- key C-Q		= &Prefix(KeymapDefault) # nodoka に左右されないキー入力
- key C-S		= &Default		# 検索
- key C-T		= &Default		# 文字入れ替え
- key C-V		= Next			# 次頁 (Waffle のバグ?)
- key M-V		= &Default		# 前頁
- key C-W		= &Default		# CUT
- key M-W		= &Default		# COPY
- key C-Y		= &Default		# PASTE
- key M-U		= &Default		# 大文字
- key S-Home		= &Default		# 文頭(選択)
- key S-End		= &Default		# 文末(選択)
- key S-M-Comma		= &Default		# 文頭
- key S-M-Period		= &Default		# 文末
- key M-BackSpace	= &Default		# BS(単語)
- key C-Slash		= &Default		# UNDO
-
-keymap2	WaffleMark
- key Home		= S-C-Home	&Prefix(WaffleMark)	# 文頭
- key End		= S-C-End	&Prefix(WaffleMark)	# 文末
- key C-A		= S-Home	&Prefix(WaffleMark)	# 行頭
- key C-B		= S-Left	&Prefix(WaffleMark)	# ←
- key M-B		= S-C-Left	&Prefix(WaffleMark)	# ←(単語)
- key C-E		= S-End	&Prefix(WaffleMark)		# 行末
- key C-F		= S-Right	&Prefix(WaffleMark)	# →
- key M-F		= S-C-Right	&Prefix(WaffleMark)	# →(単語)
- key C-G		= $WaffleMark/cancel &Undefined		# キャンセル
- key C-N		= S-Down	&Prefix(WaffleMark)	# ↓
- key C-P		= S-Up		&Prefix(WaffleMark)	# ↑
- key C-V		= S-Next	&Prefix(WaffleMark)	# 次頁
- key M-V		= S-Prior	&Prefix(WaffleMark)	# 前頁
- key C-W		= C-W Left Right			# CUT
- key M-W		= M-W Left Right			# COPY
- key S-M-Comma		= S-C-Home	&Prefix(WaffleMark)	# 文頭
- key S-M-Period		= S-C-End	&Prefix(WaffleMark)	# 文末
- key Left		= S-Left	&Prefix(WaffleMark)	# ←
- key Up			= S-Up		&Prefix(WaffleMark)	# ↑
- key Right		= S-Right	&Prefix(WaffleMark)	# →
- key Down		= S-Down	&Prefix(WaffleMark)	# ↓
-
-
-## Xyzzy ......................................................................
-## http://www.jsdlab.co.jp/~kamei/
-
-window Xyzzy /xyzzy\.exe:/ : Global
- key C-S-K     C-A-K	= C-X C-C		# ウィンドウを閉じる
-
-
-## Windows Media Player .......................................................
-
-window WindowsMediaPlayer /mplayer2.*:(Media Player 2|VideoRenderer)/ : Global
- key C-A		= Space		# Play
- key C-R		= Space		# Play
- key C-P		= Space		# Pause
- key C-S		= Period	# Stop
-
-
-## Windows Mine Sweeper .......................................................
-
-window WindowsMineSweeper /winmine.exe:マインスイーパ$/ : Global
- key D-Z		= &VK(RButton)
- key U-Z		= &Ignore
- key D-X		= &VK(MButton)
- key U-X		= &Ignore
- key D-C		= &VK(LButton)
- key U-C		= &Ignore
- key Q			= F2
- key Num1		= &MouseMove(-16,  16)
- key Num2		= &MouseMove(  0,  16)
- key Num3		= &MouseMove( 16,  16)
- key Num4		= &MouseMove(-16,   0)
- key Num6		= &MouseMove( 16,   0)
- key Num7		= &MouseMove(-16, -16)
- key Num8		= &MouseMove(  0, -16)
- key Num9		= &MouseMove( 16, -16)
-
-
-## ICQ2000 ....................................................................
-## http://web.icq.com/
-
-if ( GANA )
-  window ICQMessageSession \
-	( /ICQ\.exe:#32770:Edit$/ && /Message Session/ ) : EmacsEdit
-   key Enter		= M-S
-endif
-
-
 ## Acrobat Reader .............................................................
 ## http://www.adobe.co.jp/support/custsupport/library/acrwin.html
 
 window AcrobatReader /AcroRd32.exe:.*:MDIClient:/ : EmacsMove
  key Space		= PageDown
  key BS			= PageUp
-
-
-## Edmax ......................................................................
-## http://www.bekkoame.ne.jp/~t.mzaki/
-
-window EdMax-edit /edmax\.exe:.*Afx:400000:b:0:1900010:0$/ : EmacsEdit
-
-
-## VisualBasic ................................................................
-
-window VBTextBox /:ThunderRT6FormDC:(ThunderRT6TextBox|RichTextWndClass)$/ \
-	: EmacsEdit
-
-## StarOffice/StarSuite/OpenOffice ............................................
-
-window StarOffice /soffice\.exe:SALFRAME$/ : EmacsEdit
-
-## Opera ......................................................................
-
-window	Opera /Opera\.exe:/ : EmacsEdit
