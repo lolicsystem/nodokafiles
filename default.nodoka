@@ -398,7 +398,22 @@ window	MicrosoftExcel /EXCEL\.EXE:XLMAIN:/ : EmacsEdit
 ## Mozilla ....................................................................
 ## http://www.mozilla.org/
 
-window	Mozilla /:MozillaWindowClass$/ : EmacsEdit
+window	Mozilla /:MozillaWindowClass/ : EmacsEdit
+ key C-X		= &Prefix(GeneralC-X)
+ key C-W		= C-W			# Window Close
+ key C-T		= C-T			# New Tab
+ key S-C-T		= S-C-T			# Recover Tab
+ key C-U		= C-U			# Source
+# key S-L		= C-TAB			# 次のタブ
+# key S-H		= S-C-TAB		# 前のタブ
+ key C-Slash		= C-K			# Web検索
+ key C-Period		= C-L			# ロケーションバーに移動
+# key C-F		= C-F			# find
+# key C-S		= C-S			# save page
+ key S-C-C		= &Default		# Cache Viewer
+
+
+window  MozillaDialog /:MozillaDialogClass/ : Mozilla
 
 
 ## TeraTerm ...................................................................
