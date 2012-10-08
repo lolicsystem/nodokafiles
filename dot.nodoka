@@ -21,7 +21,8 @@ keymap Global
 
 # 以下は、便宜上、設定するもの
 key C-A-D = &DescribeBindings 		# 現在のキーマップのログ出力
-key F1 = &SendPostMessage("PostTray",,"のどか", 0x0205, 0, 0)	# のどかのメニューを開く
+#key F1 = &SendPostMessage("PostTray",,"のどか", 0x0205, 0, 0)	# のどかのメニューを開く
+#F1のキーマップコメントアウト 2010/06/27 1:17 by Chiemimaru
 
 
 # シフト+F2: 日本語キーボード、英語キーボード 切り替えトグル
@@ -35,4 +36,22 @@ endif
 
 
 # 以下に、ご自身の設定を御書き下さい。
+# DelでBS、Shift-DelでDelを送出。
+#key Del = BS
+#key S-Del = Del
+#keyseq $SHIFTDEL =  S-*Del
+#key S-C-BS = $SHIFTDEL
 
+# IME起動中でも、DelでBSが効くように。
+#key I-Del = BS
+
+# IMEトグルキーシーケンス送出用のキーバインド追加。
+#key C-BackSlash = $ToggleIME
+#key S-C-Space = $ToggleIME
+
+# 右 Alt で IME 切り替え
+#mod alt -= RightAlt
+#key RightAlt = $ToggleIME
+#key IL-*IC-RightAlt = $ToggleIME
+
+key 変換 = $ToggleIME

@@ -27,11 +27,15 @@ def subst  S-*CloseBracket	= $VERTICAL_LINE
 def subst  S-*Semicolon		= $COLON
 def subst ~S-*Colon		= $APOSTROPHE
 def subst  S-*Colon		= $QUOTATION_MARK
-def subst    *無変換		= *Space
-def subst    *変換		= *Space
-def subst    *ひらがな		= *Space
+#def subst    *無変換		= *Space
+#def subst    *変換		= *Space
+#def subst    *ひらがな		= *Space
 def subst    *英数		= S-*英数
 def subst *ReverseSolidus	= *RightShift
 
+def subst  S-*BackSpace		= $TILDE	# For HHKB
+def subst  LWin			= LAlt		# For HHKB (Lite Ext. mode)
+
 keymap Global
  mod shift += ReverseSolidus
+ mod alt   += LWin				# For HHKB (Lite Ext. mode)
