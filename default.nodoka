@@ -306,6 +306,7 @@ window	Meadow	/:Meadow$/ : Emacsen
  key IC-M-X		= $ToggleIME M-X
 window	MULE	/:MULE$/ : Emacsen
 window	Emacs	/:Emacs$/ : Emacsen
+window	XVision	/xvl\.exe/ : Emacsen
 
 
 ## Notepad ....................................................................
@@ -416,6 +417,78 @@ window	Mozilla /:MozillaWindowClass/ : EmacsEdit
 window  MozillaDialog /:MozillaDialogClass/ : Mozilla
 
 
+## chrome .....................................................................
+
+window Chrome /chrome.exe/ : EmacsEdit
+ key C-W		= C-W			# Window Close
+ key C-T		= C-T			# New Tab
+ key S-C-T		= S-C-T			# Recover Tab
+ if ( !ZXCV ) key C-X	= &Prefix(GeneralC-X)
+# key C-F		= C-F			# find
+# key C-S		= C-S			# save page
+
+
+## Jane Style .................................................................
+
+window Jane /Jane2ch\.exe/ : EmacsEdit
+ key C-X		= &Prefix(GeneralC-X)
+ key C-Q		= &Default
+ key C-W		= &Default
+
+keymap2	JaneG
+ key G			= Home			# 文頭(G G)
+
+window JaneTextView /Jane2ch\.exe.*:TMDITextView/ : Jane
+ key J                  = Down
+ key K                  = Up
+ key G			= &Prefix(JaneG)	# 文頭(G G)用
+ key S-G		= End			# 文末
+ key L			= C-PageDown		# 次のタブ
+ key H			= C-PageUP		# 前のタブ
+ key F			= Insert		# カーソル移動モード切り替え
+ key S-F		= Delete		# カーソル移動モード切り替え
+ key I			= LAlt O I M		# マウスオーバー表示切り替え
+ key C-S-R		= LAlt T H		# 全てのタブの新着チェック
+
+window JaneImageForm /Jane2ch\.exe:TImageForm/ : Jane
+ key C-S		= &Default		# この画像を保存
+ key C-S-S		= &Default		# 全画像を保存
+ key L			= C-Tab			# 次のタブ
+ key H			= S-C-Tab		# 前のタブ
+
+
+## Janetter .................................................................
+
+window Janetter /Janetter\.exe/ : EmacsEdit
+ key C-X		= &Prefix(GeneralC-X)
+ key S-C-A		= &Default		# アカウント変更
+ key S-C-E		= &Default		# ツィート欄を閉じる
+ key S-C-D		= &Default		# 下書きメニュー
+ key S-C-S		= &Default		# 下書き保存
+ key S-C-P     	   	= &Default		# 写真を追加
+ key S-C-U		= &Default		# URL短縮
+ key S-C-M		= &Default		# DM
+
+
+## Picasa Photo Viewer ......................................................
+
+window PicasaPhotoViewer /PicasaPhotoViewer\.exe/ : EmacsEdit
+ key C-X		= &Prefix(GeneralC-X)
+ key L			= Right
+ key H			= Left
+
+
+## Photoshop.................................................................
+
+window Photoshop /Photoshop\.exe/
+
+
+## IE ....................................................................
+
+window IE /iexplore\.exe/ : EmacsEdit
+ key C-W		= C-W			# Window Close
+
+
 ## TeraTerm ...................................................................
 ## http://hp.vector.co.jp/authors/VA002416/
 
@@ -435,3 +508,30 @@ window	TeraTerm /TTermPRO\.exe:VTWin32$/ : Global
 window AcrobatReader /AcroRd32.exe:.*:MDIClient:/ : EmacsMove
  key Space		= PageDown
  key BS			= PageUp
+
+
+## Ableton Live 8 .............................................................
+
+window Ableton /Ableton Live 8\.exe/
+
+
+## Reason .....................................................................
+
+window Reason /Reason\.exe/
+
+
+## Poser ......................................................................
+
+window Poser /PoserJ\.exe/
+
+
+## ComicStdio 4.0 EX ..........................................................
+
+window ComicStudioPageEdit /CS_EX\.exe/
+  # CS側で、N=鉛筆、R=ペン、T=マジックにバインドしてるものとする。
+  key N = _4 N		# 鉛筆 の時は描画色は黒(の代替色)
+  key R = _4 R		# ペン の時は    〃       〃
+  key T = _5 T		# マジックの時は描画色は白(の代替色)
+
+window ComicStudioTreeView /CS_EX\.exe.*:SysTreeView32/
+window ComicStudioDialog   /CS_EX\.exe.*:#32770/
