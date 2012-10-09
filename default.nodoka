@@ -110,11 +110,14 @@ keymap2 GlobalEscape : Global = &KeymapParent
  event prefixed		= &HelpMessage("Global", "ESC-")
  event before-key-down	= &HelpMessage
  key M-C-G		= &Ignore
+ key M-Esc		= Escape		# M-M- で、Escape に。
  key M-B		= C-Left		# ←(単語)
  key M-F		= C-Right		# →(単語)
  key M-V		= Prior			# 前頁
  key M-D		= S-C-Right C-X		# 単語削除(右)
  key M-BS		= S-C-Left C-X		# 単語削除(左)
+ key S-M-Comma		= C-Home		# 文頭
+ key S-M-Period		= C-End			# 文末
 
 
 keymap2 GlobalCtrl : Global = &KeymapParent

@@ -59,7 +59,11 @@ keymap	EmacsMove : Global
 					  &ClipboardDowncaseWord C-V
  keyseq	$EmacsEdit/kill-line		= &EmacsEditKillLineFunc S-End C-X \
 			&Sync &EmacsEditKillLinePred((Delete), (Return Left))
- keyseq	$EmacsMark/cancel		= Left Right
+#keyseq	$EmacsMark/cancel		= Left Right
+ keyseq	$EmacsMark/cancel		= &Undefined
+						# Left Right のままだと、
+						# リージョン選択キャンセル時、
+						# 変な動きになるので。
 
 
 keymap	EmacsEdit : EmacsMove
@@ -156,6 +160,7 @@ keymap2 EmacsMarkEscape
  event prefixed		= &HelpMessage("EmacsMark ESC-", " ")
  event before-key-down	= &HelpMessage
  key M-C-G		= &Ignore
+ key M-Esc		= Escape		# M-M- で、Escape に。
 
 
 # from http://d.hatena.ne.jp/blono/comment?date=20100710&section=1278751520
