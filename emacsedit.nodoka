@@ -10,6 +10,8 @@
 #
 
 keymap	EmacsMove : Global
+ key S-C-A		= C-A			# 全選択(C-Aは行頭なので)
+
  key Home		= C-Home		# 文頭
  key End		= C-End			# 文末
  key C-Space		= &Undefined		# Mark

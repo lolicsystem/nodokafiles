@@ -265,7 +265,6 @@ window	ExplorerList /EXPLORER.*:SHELLDLL_DefView:.*SysListView32$/ \
  key C-S-Z		= &Sync&WindowMaximize	# ウィンドウの最大化
  key C-A-Z		= C-&WindowMaximize	# ウィンドウの全画面化
  key M-E		= $Explorer/show-folder-bar # フォルダを表示
- key C-S-A		= C-A			# すべてを選択
 
 window	ExplorerList2 /EXPLORER.*:SHELLDLL_DefView:.*DirectUIHWND$/ \
 			: ExplorerList
@@ -357,14 +356,14 @@ keymap  BeckyMove : EmacsEdit
   key C-X	= &Prefix(BeckyC-X)
 
 window BeckyFolderList /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:#32770/ : BeckyMove
+
 window BeckyMailList   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:SysListView32$/ : BeckyMove
   key S-G	= End
   key G         = &Prefix(BeckyG)
-  key S-C-A	= C-A			# Select All
+
 window BeckyMailRead   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:#32770/ : BeckyMove
   key S-G	= End
   key G         = &Prefix(BeckyG)
-  key S-C-A	= C-A			# Select All
 
 window BeckyCompose /B2\.exe:Becky2ComposeFrame:/ : EmacsEdit
   if ( !ZXCV ) key C-X	= &Prefix(BeckyC-X)
