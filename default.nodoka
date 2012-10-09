@@ -103,8 +103,8 @@ keymap Global
    key C-→		= W-→			#	〃
  endif
 
- key A-C-W		= LWin
- key A-C-R		= RButton
+ key A-C-W		= LWin			# LWin→LAltにしているので、代わりに。
+ key A-C-R		= RButton		# menuキーの代わりに。
 
 keymap2 GlobalEscape : Global = &KeymapParent
  event prefixed		= &HelpMessage("Global", "ESC-")
@@ -184,6 +184,7 @@ keymap2	GeneralC-X : EmacsC-X
 # key C-C		= LAlt F X		# 終了(X)
 # key C-C		= A-Q			# 終了(X)
  key C-C		= $WindowClose		# 終了(X)
+ key C-Z		= &WindowMinimize	# 最小化
 
 
 ## ダイアログボックス .........................................................
