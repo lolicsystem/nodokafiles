@@ -33,6 +33,9 @@ def subst  S-*Colon		= $QUOTATION_MARK
 def subst    *英数		= S-*英数
 def subst *ReverseSolidus	= *RightShift
 
+def subst  S-ESC		= $GRAVE_ACCENT	# 109を無理やり104で使うとき
+						# に、` を入力できるように
+
 def subst  S-*BackSpace		= $TILDE	# For HHKB
 def subst  LWin			= LAlt		# For HHKB (Lite Ext. mode)
 
