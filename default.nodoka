@@ -269,6 +269,7 @@ window	ExplorerList /EXPLORER.*:SHELLDLL_DefView:.*SysListView32$/ \
  key C-S-Z		= &Sync&WindowMaximize	# ウィンドウの最大化
  key C-A-Z		= C-&WindowMaximize	# ウィンドウの全画面化
  key M-E		= $Explorer/show-folder-bar # フォルダを表示
+ key C-Y		= C-V			# PASTE
 
 window	ExplorerList2 /EXPLORER.*:SHELLDLL_DefView:.*DirectUIHWND$/ \
 			: ExplorerList
@@ -359,11 +360,19 @@ keymap  BeckyMove : EmacsEdit
   key *M	= LButton
   key C-X	= &Prefix(BeckyC-X)
 
+keymap2	BeckyMark : EmacsMark
+  key C-B	= C-B Left Right	# 選択中の既読化
+  key S-C-B	= S-C-B Left Right	# 選択中の未読化
+  key J		= S-Down &Prefix(BeckyMark)	# ↓
+  key K		= S-Up	 &Prefix(BeckyMark)	# ↑
+
+
 window BeckyFolderList /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:#32770/ : BeckyMove
 
 window BeckyMailList   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:SysListView32$/ : BeckyMove
   key S-G	= End
   key G         = &Prefix(BeckyG)
+  key C-Space	= &Prefix(BeckyMark)	# Mark
 
 window BeckyMailRead   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:#32770/ : BeckyMove
   key S-G	= End
@@ -371,6 +380,7 @@ window BeckyMailRead   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:#3
 
 window BeckyCompose /B2\.exe:Becky2ComposeFrame:/ : EmacsEdit
   if ( !ZXCV ) key C-X	= &Prefix(BeckyC-X)
+  key End	= &Default
 
 window BeckyEdit    /B2\.exe:Becky2MainFrame:.*:Edit/ : EmacsEdit
   if ( !ZXCV ) key C-X	= &Prefix(GeneralC-X)
@@ -399,6 +409,7 @@ window	MicrosoftWord /WINWORD\.EXE:.*:_WwG$/ : EmacsEdit
 
 window	MicrosoftExcel /EXCEL\.EXE:XLMAIN:/ : EmacsEdit
  if ( !ZXCV ) key C-X	= &Prefix(GeneralC-X)
+ key C-S-B		= C-B			# 太字
 
 
 ## Mozilla ....................................................................
@@ -422,12 +433,13 @@ window	Mozilla /:MozillaWindowClass/ : EmacsEdit
 window  MozillaDialog /:MozillaDialogClass/ : Mozilla
 
 
-## chrome .....................................................................
+## Google Chrome ..............................................................
 
 window Chrome /chrome.exe/ : EmacsEdit
- key C-W		= C-W			# Window Close
+ key C-W		= C-W			# Close Tab
  key C-T		= C-T			# New Tab
- key S-C-T		= S-C-T			# Recover Tab
+ key C-S-T		= C-S-T			# Revert Latest Tab
+ key C-U		= C-U			# View Source
  if ( !ZXCV ) key C-X	= &Prefix(GeneralC-X)
 # key C-F		= C-F			# find
 # key C-S		= C-S			# save page
