@@ -397,12 +397,27 @@ window BeckyEdit    /B2\.exe:Becky2MainFrame:.*:Edit/ : EmacsEdit
 keymap2	PowerPointC-X : GeneralC-X
  key C-C		= $WindowClose		# 終了(X)
 
-window	PowerPoint /POWERPNT\.EXE:.*:(paneClassDC|REComboBox20W|RichEdit20W)$/\
-			: EmacsEdit
- if ( !ZXCV ) key C-X	= &Prefix(PowerPointC-X)
+keymap2 PowerPointC-Q : EmacsEdit
+ event prefixed		= &HelpMessage("PowerPoint", \
+	"J\t次ページ\r\n"	\
+	"K\t前ページ")
+ key J		= Down &Prefix(PowerPointC-Q)
+ key K		= Up   &Prefix(PowerPointC-Q)
+ key C-Q C-G Esc= &Ignore &HelpMessage
+
+window	PowerPoint /POWERPNT\.EXE:.*:(paneClassDC|REComboBox20W|RichEdit20W)$/ : EmacsEdit
+ key C-X	= &Prefix(PowerPointC-X)
+ key C-W	= LAlt F C		# 文書を閉じる
+ key C-Q	= &Prefix(PowerPointC-Q) #JKモードに突入
 
 window	PowerPoint2 /POWERPNT\.EXE:PP9FrameClass.*/ : EmacsEdit
- if ( !ZXCV ) key C-X	= &Prefix(PowerPointC-X)
+ key C-X	= &Prefix(PowerPointC-X)
+ key C-W	= LAlt F C		# 文書を閉じる
+
+# スライドショー時にJKで次、前
+window  PowerPointSlideShow /POWERPNT\.EXE:screenClass:paneClassDC/ : EmacsEdit
+ key J		= Down
+ key K		= Up
 
 
 ## Microsoft Word .............................................................
