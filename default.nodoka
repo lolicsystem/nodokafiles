@@ -555,4 +555,4 @@ window ComicStudioPageEdit /CS_EX\.exe/
   key T = _5 T		# マジックの時は描画色は白(の代替色)
 
 window ComicStudioTreeView /CS_EX\.exe.*:SysTreeView32/
-window ComicStudioDialog   /CS_EX\.exe.*:#32770/
+window ComicStudioDialog   /CS_EX\.exe.*:#32770/ : EmacsEdit
