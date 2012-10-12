@@ -545,9 +545,20 @@ window	TeraTerm /TTermPRO\.exe:VTWin32$/ : Global
 ## Acrobat Reader .............................................................
 ## http://www.adobe.co.jp/support/custsupport/library/acrwin.html
 
-window AcrobatReader /AcroRd32.exe:.*:MDIClient:/ : EmacsMove
- key Space		= PageDown
- key BS			= PageUp
+window AcrobatReader /AcroRd32.exe:.*:AVL_AVView$/ : EmacsMove
+ key C-X	= &Prefix(GeneralC-X)
+ key Space J	= PageDown
+ key 	   K	= PageUp
+ key S-J	= Down
+ key S-K	= Up
+ key S-G	= End
+ key G		= &Prefix(GeneralG)
+ key S-C-N	= &Default
+
+window AcrobatReaderEdit /AcroRd32.exe:.*:AVL_AVView:Edit$/ : EmacsMove
+ key C-X	= &Prefix(GeneralC-X)
+
+window AcrobatOnChrome /chrome\.exe:Chrome_WidgetWin_1/ : AcrobatReader
 
 
 ## Ableton Live 8 .............................................................
