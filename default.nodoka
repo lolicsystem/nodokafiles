@@ -266,16 +266,14 @@ window  ConsoleWindowClass /^ConsoleWindowClass$/ : Global
 
  keyseq $Explorer/show-folder-bar = &PostMessage(ToMainWindow, 273, 41525, 0)
 
-window	ExplorerList /EXPLORER.*:SHELLDLL_DefView:.*SysListView32$/ \
-			: SysListView32
+window	ExplorerList /EXPLORER.*:SHELLDLL_DefView:.*SysListView32$/ : SysListView32
  key S-R		= F2			# 名前の変更
  key C-S-Z		= &Sync&WindowMaximize	# ウィンドウの最大化
  key C-A-Z		= C-&WindowMaximize	# ウィンドウの全画面化
  key M-E		= $Explorer/show-folder-bar # フォルダを表示
  key C-Y		= C-V			# PASTE
 
-window	ExplorerList2 /EXPLORER.*:SHELLDLL_DefView:.*DirectUIHWND$/ \
-			: ExplorerList
+window	ExplorerList2 /EXPLORER.*:SHELLDLL_DefView:.*DirectUIHWND$/ : ExplorerList
 
 window	ExplorerTree /EXPLORER.*:BaseBar:.*SysTreeView32$/ : SysTreeView32
  key S-R		= F2			# 名前の変更
@@ -292,9 +290,7 @@ window	InternetExplorer /:Internet Explorer_Server$/ : EmacsEdit
 # http://es.sourceforge.jp/ticket/browse.php?group_id=4424&tid=18663
 window	IEFrame	/:IEFrame/ : EmacsEdit
 
-
-window	MicrosoftJava	/:Microsoft VM For Java\(TM\) Host Window Class:/ \
-	: EmacsEdit
+window	MicrosoftJava	/:Microsoft VM For Java\(TM\) Host Window Class:/ : EmacsEdit
 
 
 ## Emacs ......................................................................
@@ -303,12 +299,12 @@ window	MicrosoftJava	/:Microsoft VM For Java\(TM\) Host Window Class:/ \
 keymap Emacsen : Global
  key C-Yen		= &Default
  if ( MAP-ESCAPE-TO-META )			# ESC が M- になるのを阻止する
-   if ( KBD109 ) and ( ! KBD104on109 )
+#   if ( KBD109 ) and ( ! KBD104on109 )
 #     key *半角/全角	= *Esc
 #     key *Esc		= *半角/全角
-   else
+#   else
      key Escape		= &Default
-   endif
+#   endif
  endif
 
 window	Meadow	/:Meadow$/ : Emacsen
@@ -343,7 +339,7 @@ keymap2	NotepadC-X : GeneralC-X
  key C-C		= $WindowClose		# メモ帳の終了(X)
 
 window	Notepad /:Notepad:Edit$/ : EmacsEdit
- if ( !ZXCV ) key C-X	= &Prefix(NotepadC-X)
+ key C-X		= &Prefix(NotepadC-X)
  key C-S		= F3			# 検索(F)...
  key M-J		= C-G			# 行へ移動
 
@@ -427,14 +423,15 @@ window  PowerPointSlideShow /POWERPNT\.EXE:screenClass:paneClassDC/ : EmacsEdit
 ## Microsoft Word .............................................................
 
 window	MicrosoftWord /WINWORD\.EXE:.*:_WwG$/ : EmacsEdit
- if ( !ZXCV ) key C-X	= &Prefix(GeneralC-X)
+ key C-X	= &Prefix(GeneralC-X)
+ key C-S-B	= C-B			# 太字
 
 
 ## Microsoft Excel ............................................................
 
 window	MicrosoftExcel /EXCEL\.EXE:XLMAIN:/ : EmacsEdit
- if ( !ZXCV ) key C-X	= &Prefix(GeneralC-X)
- key C-S-B		= C-B			# 太字
+ key C-X	= &Prefix(GeneralC-X)
+ key C-S-B	= C-B			# 太字
 
 
 ## Mozilla ....................................................................
@@ -465,7 +462,7 @@ window Chrome /chrome.exe/ : EmacsEdit
  key C-T		= C-T			# New Tab
  key C-S-T		= C-S-T			# Revert Latest Tab
  key C-U		= C-U			# View Source
- if ( !ZXCV ) key C-X	= &Prefix(GeneralC-X)
+ key C-X		= &Prefix(GeneralC-X)
 # key C-F		= C-F			# find
 # key C-S		= C-S			# save page
 
