@@ -186,6 +186,9 @@ keymap2	GeneralC-X : EmacsC-X
  key C-C		= $WindowClose		# 終了(X)
  key C-Z		= &WindowMinimize	# 最小化
 
+keymap2	GeneralG
+ key G		= Home			# [ G G ]文頭
+
 
 ## ダイアログボックス .........................................................
 
@@ -350,9 +353,6 @@ keymap2	BeckyC-X : GeneralC-X
  key C-J	= C-K C-J			# [ C-X C-J ] 折り返しON/OFF
  key C-K	= C-A A-E V T Down Enter C-Home	# [ C-X C-K ] Untabify All
 
-keymap2	BeckyG   : GeneralC-X
- key G		= Home			# [ G G ]文頭
-
 keymap  BeckyMove : EmacsEdit
   key C-S-B	= C-S-B
   key C-B	= C-B
@@ -374,22 +374,24 @@ keymap2	BeckyMark : EmacsMark
 
 
 window BeckyFolderList /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:#32770/ : BeckyMove
+  key C-K	= &Default
 
 window BeckyMailList   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:SysListView32$/ : BeckyMove
   key S-G	= End
-  key G         = &Prefix(BeckyG)
+  key G         = &Prefix(GeneralG)
+  key C-K	= &Default
   key C-Space	= &Prefix(BeckyMark)	# Mark
 
 window BeckyMailRead   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:#32770/ : BeckyMove
-  key S-G	= End
-  key G         = &Prefix(BeckyG)
+  key S-G	= C-End
+  key G         = &Prefix(GeneralG)
 
 window BeckyCompose /B2\.exe:Becky2ComposeFrame:/ : EmacsEdit
-  if ( !ZXCV ) key C-X	= &Prefix(BeckyC-X)
+  key C-X	= &Prefix(BeckyC-X)
   key End	= &Default
 
 window BeckyEdit    /B2\.exe:Becky2MainFrame:.*:Edit/ : EmacsEdit
-  if ( !ZXCV ) key C-X	= &Prefix(GeneralC-X)
+  key C-X	= &Prefix(GeneralC-X)
 
 
 ## Microsoft Power Point ......................................................
@@ -572,4 +574,5 @@ window ComicStudioPageEdit /CS_EX\.exe/
   key T = _5 T		# マジックの時は描画色は白(の代替色)
 
 window ComicStudioTreeView /CS_EX\.exe.*:SysTreeView32/
+
 window ComicStudioDialog   /CS_EX\.exe.*:#32770/ : EmacsEdit
