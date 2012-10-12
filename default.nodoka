@@ -347,7 +347,8 @@ window	Notepad /:Notepad:Edit$/ : EmacsEdit
 ## http://www.rimarts.co.jp/index-j.html
 
 keymap2	BeckyC-X : GeneralC-X
- key C-J	= C-K C-J		# [ C-X C-J ] 折り返しON/OFF
+ key C-J	= C-K C-J			# [ C-X C-J ] 折り返しON/OFF
+ key C-K	= C-A A-E V T Down Enter C-Home	# [ C-X C-K ] Untabify All
 
 keymap2	BeckyG   : GeneralC-X
  key G		= Home			# [ G G ]文頭
@@ -363,6 +364,7 @@ keymap  BeckyMove : EmacsEdit
   key S-K	= WheelForward
   key *M	= LButton
   key C-X	= &Prefix(BeckyC-X)
+  key C-U	= A-V A-W		# ヘッダの表示
 
 keymap2	BeckyMark : EmacsMark
   key C-B	= C-B Left Right	# 選択中の既読化
