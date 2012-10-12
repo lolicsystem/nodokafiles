@@ -458,13 +458,15 @@ window  MozillaDialog /:MozillaDialogClass/ : Mozilla
 ## Google Chrome ..............................................................
 
 window Chrome /chrome.exe/ : EmacsEdit
- key C-W		= C-W			# Close Tab
- key C-T		= C-T			# New Tab
- key C-S-T		= C-S-T			# Revert Latest Tab
- key C-U		= C-U			# View Source
- key C-X		= &Prefix(GeneralC-X)
-# key C-F		= C-F			# find
-# key C-S		= C-S			# save page
+ key C-W	= C-W			# Close Tab
+ key C-T	= C-T			# New Tab
+ key C-S-T	= C-S-T			# Revert Latest Tab
+ key C-U	= C-U			# View Source
+ key C-Slash	= C-E			# Focus to Address-bar and Search
+ key C-Period	= C-E BS		# Focus to Address-bar
+ key A-N	= F3			# Search Next
+ key A-P	= S-F3			# Search Previous
+ key C-X	= &Prefix(GeneralC-X)
 
 
 ## Jane Style .................................................................
