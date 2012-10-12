@@ -315,6 +315,10 @@ window	Emacs	/:Emacs$/ : Emacsen
 window	XVision	/xvl\.exe/ : Emacsen
 
 
+## mintty ......................................................................
+window mintty /:mintty/		# mintty 自体がEmacs-likeなので
+
+
 ## Notepad ....................................................................
 
  keyseq $Notepad/new		= &PostMessage(ToParentWindow, 273, 9, 0)
