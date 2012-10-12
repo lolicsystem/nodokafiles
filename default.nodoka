@@ -312,7 +312,9 @@ keymap Emacsen : Global
  endif
 
 window	Meadow	/:Meadow$/ : Emacsen
- key IC-M-X		= $ToggleIME M-X
+ # 日本語入力中に M-X した場合、事前に入力中の文字をキャンセルしIMEを抜ける。
+ key IC-M-X		= Esc $ToggleIME M-X
+
 window	MULE	/:MULE$/ : Emacsen
 window	Emacs	/:Emacs$/ : Emacsen
 window	XVision	/xvl\.exe/ : Emacsen
