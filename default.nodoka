@@ -546,7 +546,7 @@ window	TeraTerm /TTermPRO\.exe:VTWin32$/ : Global
 ## Acrobat Reader .............................................................
 ## http://www.adobe.co.jp/support/custsupport/library/acrwin.html
 
-window AcrobatReader /AcroRd32.exe:.*:AVL_AVView$/ : EmacsMove
+window AcrobatReader /Acro.*\.exe:.*:AVL_AVView$/ : EmacsMove
  key C-X	= &Prefix(GeneralC-X)
  key Space J	= PageDown
  key 	   K	= PageUp
@@ -556,10 +556,12 @@ window AcrobatReader /AcroRd32.exe:.*:AVL_AVView$/ : EmacsMove
  key G		= &Prefix(GeneralG)
  key S-C-N	= &Default
 
-window AcrobatReaderEdit /AcroRd32.exe:.*:AVL_AVView:Edit$/ : EmacsMove
+window AcrobatReaderEdit /Acro.*\.exe:.*:AVL_AVView:Edit$/ : EmacsMove
  key C-X	= &Prefix(GeneralC-X)
 
-window AcrobatOnChrome /chrome\.exe:Chrome_WidgetWin_1/ : AcrobatReader
+#window AcrobatOnChrome /chrome\.exe:Chrome_WidgetWin_1/ : AcrobatReader
+# 上記設定の場合、たとえば Chrome のスタート画面にもマッチし、J,K等が効かなくなるので
+# 要修正
 
 
 ## Ableton Live 8 .............................................................
