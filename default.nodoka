@@ -590,3 +590,8 @@ window ComicStudioPageEdit /CS_EX\.exe/
 window ComicStudioTreeView /CS_EX\.exe.*:SysTreeView32/
 
 window ComicStudioDialog   /CS_EX\.exe.*:#32770/ : EmacsEdit
+
+
+## CLIPStudioPaint ............................................................
+
+window CLIPStudioPaint /CLIPStudioPaint\.exe/
