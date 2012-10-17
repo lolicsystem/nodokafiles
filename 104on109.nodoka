@@ -37,8 +37,10 @@ def subst  S-ESC		= $GRAVE_ACCENT	# 109を無理やり104で使うとき
 						# に、` を入力できるように
 
 def subst  S-*BackSpace		= $TILDE	# For HHKB
-def subst  LWin			= LAlt		# For HHKB (Lite Ext. mode)
+#def subst  LWin		= LAlt		# For HHKB (Lite Ext. mode)
+#↑HHKBの SW5=ON の場合、LWinはそのままで構わない。
 
 keymap Global
  mod shift += ReverseSolidus
- mod alt   += LWin				# For HHKB (Lite Ext. mode)
+# mod alt   += LWin				# For HHKB (Lite Ext. mode)
+#↑HHKBの SW5=ON の場合、LWinはそのままで構わない。
