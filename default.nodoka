@@ -403,7 +403,9 @@ keymap2 PowerPointC-Q : EmacsEdit
 	"K\t前ページ")
  key J		= Down &Prefix(PowerPointC-Q)
  key K		= Up   &Prefix(PowerPointC-Q)
- key C-Q C-G Esc= &Ignore &HelpMessage
+ key C-Q C-G Esc= &HelpMessage		# JKモードから脱出
+ key C-X	= &HelpMessage &Prefix(PowerPointC-X)
+ key C-W	= &HelpMessage LAlt F C	# 文書を閉じる
 
 window	PowerPoint /POWERPNT\.EXE:.*:(paneClassDC|REComboBox20W|RichEdit20W)$/ : EmacsEdit
  key C-X	= &Prefix(PowerPointC-X)
