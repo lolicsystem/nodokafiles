@@ -45,10 +45,11 @@ keymap Global
  key C-S-A-Right	= &WindowMove(1, 0)	#	〃
  key C-S-A-Up		= &WindowMove(0, -1)	#	〃
  key C-S-A-Down		= &WindowMove(0, 1)	#	〃
- key W-Left		= &MouseMove(-16, 0)	# マウスの移動
- key W-Right		= &MouseMove(16, 0)	#	〃
- key W-Up		= &MouseMove(0, -16)	#	〃
- key W-Down		= &MouseMove(0, 16)	#	〃
+# key W-Left		= &MouseMove(-16, 0)	# マウスの移動
+# key W-Right		= &MouseMove(16, 0)	#	〃
+# key W-Up		= &MouseMove(0, -16)	#	〃
+# key W-Down		= &MouseMove(0, 16)	#	〃
+#↑これらは、AeroSnapのキーバインドとバッティングするためコメントアウト
  key W-A-C-Left		= &MouseMove(-1, 0)	#	〃
  key W-A-C-Right	= &MouseMove(1, 0)	#	〃
  key W-A-C-Up		= &MouseMove(0, -1)	#	〃
