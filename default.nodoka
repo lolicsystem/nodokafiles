@@ -394,8 +394,13 @@ window BeckyEdit    /B2\.exe:Becky2MainFrame:.*:Edit/ : EmacsEdit
 
 ## Microsoft Power Point ......................................................
 
+keymap2 PowerPointC-Q : EmacsEdit	# keymap2相互呼び出しのため、prototype
+
 keymap2	PowerPointC-X : GeneralC-X
- key C-C		= $WindowClose		# 終了(X)
+ key C-C	= $WindowClose		# 終了(X)
+
+keymap2	PowerPointG
+ key G		= C-Home &Prefix(PowerPointC-Q)		# 文頭(G G)
 
 keymap2 PowerPointC-Q : EmacsEdit
  event prefixed		= &HelpMessage("PowerPoint", \
@@ -406,6 +411,8 @@ keymap2 PowerPointC-Q : EmacsEdit
  key C-Q C-G Esc= &HelpMessage		# JKモードから脱出
  key C-X	= &HelpMessage &Prefix(PowerPointC-X)
  key C-W	= &HelpMessage LAlt F C	# 文書を閉じる
+ key S-G	= C-End &Prefix(PowerPointC-Q)
+ key G		= &Prefix(PowerPointG)
 
 window	PowerPoint /POWERPNT\.EXE:.*:(paneClassDC|REComboBox20W|RichEdit20W)$/ : EmacsEdit
  key C-X	= &Prefix(PowerPointC-X)
