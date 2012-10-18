@@ -349,7 +349,12 @@ window	Notepad /:Notepad:Edit$/ : EmacsEdit
 
 keymap2	BeckyC-X : GeneralC-X
  key C-J	= C-K C-J			# [ C-X C-J ] 折り返しON/OFF
- key C-K	= C-A A-E V T Down Enter C-Home	# [ C-X C-K ] Untabify All
+ key C-K	= C-A A-E &Wait(100) \
+                        V &Wait(100) \
+                        T &Wait(100) \
+                     Down &Wait(100) \
+                    Enter &Wait(100) \
+                    C-Home			# [ C-X C-K ] Untabify All
 
 keymap  BeckyMove : EmacsEdit
   key C-S-B	= C-S-B
