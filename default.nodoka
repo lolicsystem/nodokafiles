@@ -447,6 +447,12 @@ window	MicrosoftWord /WINWORD\.EXE:.*:_WwG$/ : EmacsEdit
  key C-X	= &Prefix(GeneralC-X)
  key C-S-B	= C-B			# 太字
 
+ # C-K時、行末の改行を削除しないように、最後の1文字を削除対象から外す。
+ # ただし、以下の方法だと、折り返し行に関しては、「改行ではない行末文字」
+ # が残ってしまうので、改善の余地あり。
+ key C-K	= &EmacsEditKillLineFunc S-End S-Left C-X \
+		  &Sync &EmacsEditKillLinePred((Delete), (Return Left))
+
 
 ## Microsoft Excel ............................................................
 
