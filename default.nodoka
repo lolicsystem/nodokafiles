@@ -369,6 +369,7 @@ keymap  BeckyMove : EmacsEdit
   key *M	= LButton
   key C-X	= &Prefix(BeckyC-X)
   key C-U	= A-V A-W		# ヘッダの表示
+  key C-W	= &Default		# 転送
 
 keymap2	BeckyMark : EmacsMark
   key C-B	= C-B Left Right	# 選択中の既読化
