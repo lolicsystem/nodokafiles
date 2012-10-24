@@ -366,6 +366,8 @@ keymap  BeckyMove : EmacsEdit
   key K		= Up
   key S-J	= WheelBackward
   key S-K	= WheelForward
+  key H		= Left
+  key L		= Right
   key *M	= LButton
   key C-X	= &Prefix(BeckyC-X)
   key C-U	= A-V A-W		# ヘッダの表示
