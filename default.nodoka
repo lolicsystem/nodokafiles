@@ -491,10 +491,10 @@ window  MozillaDialog /:MozillaDialogClass/ : Mozilla
 ## Google Chrome ..............................................................
 
 window Chrome /chrome.exe/ : EmacsEdit
- key C-W	= C-W			# Close Tab
- key C-T	= C-T			# New Tab
- key C-S-T	= C-S-T			# Revert Latest Tab
- key C-U	= C-U			# View Source
+ key C-W	= &Default		# Close Tab
+ key C-T	= &Default		# New Tab
+ key C-S-T	= &Default		# Revert Latest Tab
+ key C-U	= &Default		# View Source
  key C-Slash	= C-E			# Focus to Address-bar and Search
  key C-Period	= C-E BS		# Focus to Address-bar
  key A-N	= F3			# Search Next
