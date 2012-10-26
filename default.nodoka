@@ -509,13 +509,10 @@ window Jane /Jane2ch\.exe/ : EmacsEdit
  key C-Q		= &Default
  key C-W		= &Default
 
-keymap2	JaneG
- key G			= Home			# 文頭(G G)
-
 window JaneTextView /Jane2ch\.exe.*:TMDITextView/ : Jane
  key J                  = Down
  key K                  = Up
- key G			= &Prefix(JaneG)	# 文頭(G G)用
+ key G			= &Prefix(GeneralG)	# 文頭(G G)用
  key S-G		= End			# 文末
  key L			= C-PageDown		# 次のタブ
  key H			= C-PageUP		# 前のタブ
