@@ -472,10 +472,10 @@ window	MicrosoftVisio /VISIO\.EXE/ : EmacsEdit
 
 window	Mozilla /:MozillaWindowClass/ : EmacsEdit
  key C-X		= &Prefix(GeneralC-X)
- key C-W		= C-W			# Window Close
- key C-T		= C-T			# New Tab
- key S-C-T		= S-C-T			# Recover Tab
- key C-U		= C-U			# Source
+ key C-W		= &Default		# Window Close
+ key C-T		= &Default		# New Tab
+ key S-C-T		= &Default		# Recover Tab
+ key C-U		= &Default		# Source
 # key S-L		= C-TAB			# 次のタブ
 # key S-H		= S-C-TAB		# 前のタブ
  key C-Slash		= C-K			# Web検索
