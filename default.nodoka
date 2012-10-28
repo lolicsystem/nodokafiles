@@ -470,7 +470,7 @@ window	MicrosoftVisio /VISIO\.EXE/ : EmacsEdit
 ## Mozilla ....................................................................
 ## http://www.mozilla.org/
 
-window	Mozilla /:MozillaWindowClass/ : EmacsEdit
+window	MozillaMain /:MozillaWindowClass/ : EmacsEdit
  key C-X		= &Prefix(GeneralC-X)
  key C-W		= &Default		# Window Close
  key C-T		= &Default		# New Tab
@@ -485,7 +485,7 @@ window	Mozilla /:MozillaWindowClass/ : EmacsEdit
  key S-C-C		= &Default		# Cache Viewer
 
 
-window  MozillaDialog /:MozillaDialogClass/ : Mozilla
+window  MozillaDialog /:MozillaDialogClass/ : EmacsEdit
 
 
 ## Google Chrome ..............................................................
