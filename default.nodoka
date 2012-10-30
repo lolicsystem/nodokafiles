@@ -628,3 +628,9 @@ window ComicStudioDialog   /CS_EX\.exe.*:#32770/ : EmacsEdit
 window CLIPStudioPaint /CLIPStudioPaint\.exe/
 window CLIPStudioPaintEdit /CLIPStudioPaint\.exe:.*:ComboBox/ : EmacsEdit
  key C-X		= &Prefix(GeneralC-X)
+
+
+## C++ Builder ................................................................
+
+window C++Builder /TAppBuilder:.*:TEditControl/ : EmacsEdit
+ key C-X		= &Prefix(GeneralC-X)
