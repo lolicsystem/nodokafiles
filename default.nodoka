@@ -455,7 +455,7 @@ window	MicrosoftWord /WINWORD\.EXE:.*:_WwG$/ : EmacsEdit
 
 ## Microsoft Excel ............................................................
 
-window	MicrosoftExcel /EXCEL\.EXE:XLMAIN:/ : EmacsEdit
+window	MicrosoftExcel /EXCEL\.EXE:XLMAIN/ : EmacsEdit
  key C-X	= &Prefix(GeneralC-X)
  key C-S-B	= C-B			# 太字
 
