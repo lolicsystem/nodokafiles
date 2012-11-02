@@ -104,8 +104,6 @@ keymap Global
    key C-→		= W-→			#	〃
  endif
 
- key A-C-W		= LWin			# LWin→LAltにしているので、代わりに。
- key A-C-R		= RButton		# menuキーの代わりに。
 
 keymap2 GlobalEscape : Global = &KeymapParent
  event prefixed		= &HelpMessage("Global", "ESC-")
