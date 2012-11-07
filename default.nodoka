@@ -520,6 +520,8 @@ window JaneTextView /Jane2ch\.exe.*:TMDITextView/ : Jane
  key S-F		= Delete		# カーソル移動モード切り替え
  key I			= LAlt O I M		# マウスオーバー表示切り替え
  key C-S-R		= LAlt T H		# 全てのタブの新着チェック
+ key A-N		= F3			# 次を検索
+ key A-P		= S-F3			# 前を検索
 
 window JaneImageForm /Jane2ch\.exe:TImageForm/ : Jane
  key C-S		= &Default		# この画像を保存
