@@ -368,7 +368,6 @@ keymap  BeckyMove : EmacsEdit
   key S-K	= WheelForward
   key H		= Left
   key L		= Right
-  key *M	= LButton
   key C-X	= &Prefix(BeckyC-X)
   key C-U	= A-V A-W		# ヘッダの表示
   key C-W	= &Default		# 転送
@@ -380,7 +379,7 @@ keymap2	BeckyMark : EmacsMark
   key K		= S-Up	 &Prefix(BeckyMark)	# ↑
 
 
-window BeckyFolderList /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:#32770/ : BeckyMove
+window BeckyFolderList /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:#32770:SysTreeView32$/ : BeckyMove
   key C-K	= &Default
   key C-H	= &Default		# クエリー検索
 
