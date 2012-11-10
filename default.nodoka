@@ -473,12 +473,8 @@ window	MozillaMain /:MozillaWindowClass/ : EmacsEdit
  key C-T		= &Default		# New Tab
  key S-C-T		= &Default		# Recover Tab
  key C-U		= &Default		# Source
-# key S-L		= C-TAB			# 次のタブ
-# key S-H		= S-C-TAB		# 前のタブ
  key C-Slash		= C-K			# Web検索
  key C-Period		= C-L			# ロケーションバーに移動
-# key C-F		= C-F			# find
-# key C-S		= C-S			# save page
  key S-C-C		= &Default		# Cache Viewer
 
 
