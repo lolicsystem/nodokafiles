@@ -423,7 +423,7 @@ keymap2 PowerPointC-Q : EmacsEdit
  key S-G	= C-End &Prefix(PowerPointC-Q)
  key G		= &Prefix(PowerPointG)
 
-window	PowerPoint /POWERPNT\.EXE:.*:(paneClassDC|REComboBox20W|RichEdit20W)$/ : EmacsEdit
+window	PowerPoint /POWERPNT\.EXE/ : EmacsEdit
  key C-X	= &Prefix(PowerPointC-X)
  key C-W	= LAlt F C		# 文書を閉じる
  key C-Q	= &Prefix(PowerPointC-Q) #JKモードに突入
