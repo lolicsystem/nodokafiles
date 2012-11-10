@@ -346,6 +346,9 @@ window	Notepad /:Notepad:Edit$/ : EmacsEdit
 ## Becky! Internet Mail .......................................................
 ## http://www.rimarts.co.jp/index-j.html
 
+keymap2	BeckyG
+ key G		= C-Home			# [ G G ]文頭
+
 keymap2	BeckyC-X : GeneralC-X
  key C-J	= C-K C-J			# [ C-X C-J ] 折り返しON/OFF
  key C-K	= C-A A-E &Wait(100) \
@@ -390,7 +393,7 @@ window BeckyMailList   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:Sy
 
 window BeckyMailRead   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:#32770/ : BeckyMove
   key S-G	= C-End
-  key G         = &Prefix(GeneralG)
+  key G         = &Prefix(BeckyG)
   key C-H	= &Default		# クエリー検索
 
 window BeckyCompose /B2\.exe:Becky2ComposeFrame:/ : EmacsEdit
