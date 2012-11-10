@@ -283,7 +283,7 @@ window	ExplorerTree /EXPLORER.*:BaseBar:.*SysTreeView32$/ : SysTreeView32
 window	InternetExplorer /:Internet Explorer_Server$/ : EmacsEdit
  key C-S-Z		= &Sync&WindowMaximize	# ウィンドウの最大化
  key C-A-Z		= C-&WindowMaximize	# ウィンドウの全画面化
- key C-W                = C-W
+ key C-W                = &Default		# タブを閉じる
 
 # Yamy チケット #18663 を参照のこと
 # http://es.sourceforge.jp/ticket/browse.php?group_id=4424&tid=18663
@@ -356,10 +356,10 @@ keymap2	BeckyC-X : GeneralC-X
                     C-Home			# [ C-X C-K ] Untabify All
 
 keymap  BeckyMove : EmacsEdit
-  key C-S-B	= C-S-B
-  key C-B	= C-B
-  key C-Q	= C-Q
-  key C-L	= C-L
+  key C-S-B	= &Default		# 未開封にする
+  key C-B	= &Default		# 開封済みにする
+  key C-Q	= &Default		# BeckyのC-Qプレフィックス
+  key C-L	= &Default		# C-Q C-L でレイアウト変更
   key J		= Down
   key K		= Up
   key S-J	= WheelBackward
@@ -556,7 +556,7 @@ window Photoshop /Photoshop\.exe/
 ## IE ....................................................................
 
 window IE /iexplore\.exe/ : EmacsEdit
- key C-W		= C-W			# Window Close
+ key C-W		= &Default		# Window Close
 
 
 ## TeraTerm ...................................................................
