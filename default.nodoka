@@ -383,6 +383,7 @@ keymap2	BeckyMark : EmacsMark
 window BeckyFolderList /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:#32770:SysTreeView32$/ : BeckyMove
   key C-K	= &Default
   key C-H	= &Default		# クエリー検索
+  key S-R	= F2			# フォルダ名変更
 
 window BeckyMailList   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:SysListView32$/ : BeckyMove
   key S-G	= End
