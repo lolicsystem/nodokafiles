@@ -42,5 +42,7 @@ def subst  S-*BackSpace		= $TILDE	# For HHKB
 
 keymap Global
  mod shift += ReverseSolidus
-# mod alt   += LWin				# For HHKB (Lite Ext. mode)
+ mod alt   += 無変換		# REALFORCE で無変換をAltと間違うので変えてしまう
+				# ただ、Alt-TABの動作等に微妙に違いが。。。(謎)
+# mod alt   += LWin		# For HHKB (Lite Ext. mode)
 #↑HHKBの SW5=ON の場合、LWinはそのままで構わない。
