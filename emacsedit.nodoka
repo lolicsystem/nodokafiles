@@ -168,3 +168,40 @@ window Eclipse /eclipse.exe:.*/ : EmacsEdit
 
 keyseq $EmacsEdit/kill-line = &Wait(10) &Sync &EmacsEditKillLineFunc &Sync &Wait(10) S-End &Wait(10) C-X \
     &Sync &Wait(10) &Sync &EmacsEditKillLinePred((Delete), (Return Left))
+
+#-----------------------------------------------------------------------
+# リージョンキャンセル時、L -> R を実行するタイプの EmacsEdit（こちらが元々のもの）
+#-----------------------------------------------------------------------
+keyseq	$EmacsMark2/cancel		= Left Right
+
+keymap2	EmacsMark2 : EmacsEdit = $EmacsMark2/cancel &KeymapWindow
+ key Home		= S-C-Home	&Prefix(EmacsMark2)	# 文頭
+ key End		= S-C-End	&Prefix(EmacsMark2)	# 文末
+ key C-A		= S-Home	&Prefix(EmacsMark2)	# 行頭
+ key C-B		= S-Left	&Prefix(EmacsMark2)	# ←
+ key M-B		= S-C-Left	&Prefix(EmacsMark2)	# ←(単語)
+ key C-E		= S-End		&Prefix(EmacsMark2)	# 行末
+ key C-F		= S-Right	&Prefix(EmacsMark2)	# →
+ key M-F		= S-C-Right	&Prefix(EmacsMark2)	# →(単語)
+ key C-G		= $EmacsMark2/cancel &Undefined		# キャンセル
+ key C-N		= S-Down	&Prefix(EmacsMark2)	# ↓
+ key C-P		= S-Up		&Prefix(EmacsMark2)	# ↑
+ key C-V		= S-Next	&Prefix(EmacsMark2)	# 次頁
+ key M-V		= S-Prior	&Prefix(EmacsMark2)	# 前頁
+ key C-W		= C-X Left Right			# CUT
+ key M-W		= C-C Left Right			# COPY
+ key S-M-Comma		= S-C-Home	&Prefix(EmacsMark2)	# 文頭
+ key S-M-Period		= S-C-End	&Prefix(EmacsMark2)	# 文末
+ key Left		= S-Left	&Prefix(EmacsMark2)	# ←
+ key Up			= S-Up		&Prefix(EmacsMark2)	# ↑
+ key Right		= S-Right	&Prefix(EmacsMark2)	# →
+ key Down		= S-Down	&Prefix(EmacsMark2)	# ↓
+ if ( MAP-ESCAPE-TO-META )
+   key Escape		= &Prefix(EmacsMarkEscape) &EditNextModifier(M-)
+   if ( KBD109 ) and ( ! KBD104on109 )
+     key 半角/全角	= &Prefix(EmacsMarkEscape) &EditNextModifier(M-)
+   endif
+ endif
+
+keymap	EmacsEdit2 : EmacsEdit
+ key C-Space		=  &Prefix(EmacsMark2)		# Mark
