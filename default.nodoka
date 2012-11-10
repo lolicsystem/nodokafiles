@@ -457,9 +457,78 @@ window	MicrosoftWord /WINWORD\.EXE:.*:_WwG$/ : EmacsEdit
 
 ## Microsoft Excel ............................................................
 
-window	MicrosoftExcel /EXCEL\.EXE:XLMAIN/ : EmacsEdit
+keymap2 ExcelEmacsMarkEscape : EmacsMark = &KeymapParent
+ event prefixed		= &HelpMessage("ExcelEmacsMark ESC-", " ")
+ event before-key-down	= &HelpMessage
+ key M-C-G		= &Ignore
+ key M-Esc		= Escape		# M-M- で、Escape に。
+ key M-W		= C-C Left Right			# COPY
+
+keyseq	$ExcelEmacsMark/cancel		= Left Right
+
+keymap2	ExcelEmacsMark : EmacsEdit = $ExcelEmacsMark/cancel &KeymapWindow
+ key Home		= S-C-Home	&Prefix(ExcelEmacsMark)	# 文頭
+ key End		= S-C-End	&Prefix(ExcelEmacsMark)	# 文末
+ key C-A		= END S-Left	&Prefix(ExcelEmacsMark)	# 行頭
+ key C-B		= S-Left	&Prefix(ExcelEmacsMark)	# ←
+ key M-B		= S-C-Left	&Prefix(ExcelEmacsMark)	# ←(単語)
+ key C-E		= End S-Right	&Prefix(ExcelEmacsMark)	# 行末
+ key C-F		= S-Right	&Prefix(ExcelEmacsMark)	# →
+ key M-F		= S-C-Right	&Prefix(ExcelEmacsMark)	# →(単語)
+ key C-G		= $ExcelEmacsMark/cancel &Undefined		# キャンセル
+ key C-N		= S-Down	&Prefix(ExcelEmacsMark)	# ↓
+ key C-P		= S-Up		&Prefix(ExcelEmacsMark)	# ↑
+ key C-V		= S-Next	&Prefix(ExcelEmacsMark)	# 次頁
+ key M-V		= S-Prior	&Prefix(ExcelEmacsMark)	# 前頁
+ key C-W		= C-X Left Right			# CUT
+ key M-W		= C-C Left Right			# COPY
+ key S-M-Comma		= S-C-Home	&Prefix(ExcelEmacsMark)	# 文頭
+ key S-M-Period		= S-C-End	&Prefix(ExcelEmacsMark)	# 文末
+ key Left		= S-Left	&Prefix(ExcelEmacsMark)	# ←
+ key Up			= S-Up		&Prefix(ExcelEmacsMark)	# ↑
+ key Right		= S-Right	&Prefix(ExcelEmacsMark)	# →
+ key Down		= S-Down	&Prefix(ExcelEmacsMark)	# ↓
+ key M-P		= End S-Up	&Prefix(ExcelEmacsMark)
+ key M-N		= End S-Down	&Prefix(ExcelEmacsMark)
+ key C-C		= &Default
+ if ( MAP-ESCAPE-TO-META )
+   key Escape		= &Prefix(ExcelEmacsMarkEscape) &EditNextModifier(M-)
+   if ( KBD109 ) and ( ! KBD104on109 )
+     key 半角/全角	= &Prefix(ExcelEmacsMarkEscape) &EditNextModifier(M-)
+   endif
+ endif
+
+keymap	ExcelEmacsEdit : EmacsEdit
+ key C-Space		=  &Prefix(ExcelEmacsMark)		# Mark
+
+keymap2 ExcelEscape : Global = &KeymapParent
+ event prefixed		= &HelpMessage("Excel", "ESC-")
+ event before-key-down	= &HelpMessage
+ key M-C-G		= &Ignore
+ key M-Esc		= Escape		# M-M- で、Escape に。
+ key M-B		= C-Left		# ←(単語)
+ key M-F		= C-Right		# →(単語)
+ key M-V		= Prior			# 前頁
+ key M-D		= S-C-Right C-X		# 単語削除(右)
+ key M-BS		= S-C-Left C-X		# 単語削除(左)
+ key S-M-Comma		= C-Home		# 文頭
+ key S-M-Period		= C-End			# 文末
+ key M-P		= End Up		# 前頁を、記入されてる一番上のセルと解釈
+ key M-N		= End Down		# 次頁を、記入されてる一番下のセルと解釈
+
+
+window	Excel /EXCEL\.EXE:XLMAIN/ : ExcelEmacsEdit
+ key Escape	= &Prefix(ExcelEscape) &EditNextModifier(M-)
  key C-X	= &Prefix(GeneralC-X)
  key C-S-B	= C-B			# 太字
+
+window	ExcelCell /EXCEL\.EXE:XLMAIN:XLDESK:EXCEL7/ : Excel
+ key Escape	= &Prefix(ExcelEscape) &EditNextModifier(M-)
+ key Home	= &Default		# 文頭
+ key End	= &Default		# 文末
+ key S-R	= F2			# セルの内容変更
+ key C-A	= End Left		# 行頭を、記入されてる一番左のセルと解釈
+ key C-E	= End Right		# 行末を、記入されてる一番右のセルと解釈
 
 
 ## Microsoft Visio ............................................................
