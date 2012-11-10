@@ -36,13 +36,11 @@ def subst *ReverseSolidus	= *RightShift
 def subst  S-ESC		= $GRAVE_ACCENT	# 109を無理やり104で使うとき
 						# に、` を入力できるように
 
-def subst  S-*BackSpace		= $TILDE	# For HHKB
-#def subst  LWin		= LAlt		# For HHKB (Lite Ext. mode)
-#↑HHKBの SW5=ON の場合、LWinはそのままで構わない。
+if ( ! HHKB )
+  def subst  S-*BackSpace	= $TILDE	# For RealForce
+endif
 
 keymap Global
  mod shift += ReverseSolidus
  mod alt   += 無変換		# REALFORCE で無変換をAltと間違うので変えてしまう
 				# ただ、Alt-TABの動作等に微妙に違いが。。。(謎)
-# mod alt   += LWin		# For HHKB (Lite Ext. mode)
-#↑HHKBの SW5=ON の場合、LWinはそのままで構わない。
