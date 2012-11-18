@@ -595,6 +595,9 @@ window JaneImageForm /Jane2ch\.exe:TImageForm/ : Jane
  key L			= C-Tab			# 次のタブ
  key H			= S-C-Tab		# 前のタブ
 
+window JaneWriteForm /Jane2ch\.exe:TWriteForm:TPageControl:TTabSheet:TTntOleMemo.UnicodeClass/ : Jane
+ key C-Enter		= Tab &Wait(100) Enter	# 即時投稿
+
 
 ## Janetter .................................................................
 
