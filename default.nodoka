@@ -397,8 +397,11 @@ window BeckyMailRead   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:#3
   key G         = &Prefix(BeckyG)
   key C-H	= &Default		# クエリー検索
 
+keymap2	BeckyCompose-X : BeckyC-X
+ key C-S	= C-S-G			# 直ちに送信
+
 window BeckyCompose /B2\.exe:Becky2ComposeFrame:/ : EmacsEdit
-  key C-X	= &Prefix(BeckyC-X)
+  key C-X	= &Prefix(BeckyCompose-X)
   key End	= &Default
 
 window BeckyEdit    /B2\.exe:Becky2MainFrame:.*:Edit/ : EmacsEdit
