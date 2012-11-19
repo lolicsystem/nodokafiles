@@ -708,14 +708,14 @@ window CLIPStudioPaintEdit /CLIPStudioPaint\.exe:.*:ComboBox/ : EmacsEdit
 keymap2 VC++C-Q : EmacsEdit
  event prefixed		= &HelpMessage("VC++", \
 	"J\tStep Over\r\n" \
-	"Shift-J\tStep Into\r\n" \
-	"K\tStep Out\r\n" \
+	"S-J, I\tStep Into\r\n" \
+	"K, O\tStep Out\r\n" \
 	"H\t前の画面\r\n" \
 	"L\t次の画面\r\n" \
 	".\tここまで実行")
  key J		= F10		&Prefix(VC++C-Q)
- key S-J	= F11		&Prefix(VC++C-Q)
- key K		= S-F11		&Prefix(VC++C-Q)
+ key S-J I	= F11		&Prefix(VC++C-Q)
+ key K   O	= S-F11		&Prefix(VC++C-Q)
  key H		= C-Minus	&Prefix(VC++C-Q)
  key L		= C-S-Minus	&Prefix(VC++C-Q)
  key Period	= C-F10		&Prefix(VC++C-Q)
