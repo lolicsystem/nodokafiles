@@ -736,3 +736,8 @@ keymap2 VC++C-Q : EmacsEdit = &Ignore &Prefix(VC++C-Q)
 
 window VC++ /VCExpress\.exe/ : EmacsEdit
  key C-Q	= &Prefix(VC++C-Q)	#JKモードに突入
+
+
+## PuTTY (設定画面のみ) .......................................................
+
+window PuTTYConfigBox /putty\.exe:PuTTYConfigBox/ : EmacsEdit
