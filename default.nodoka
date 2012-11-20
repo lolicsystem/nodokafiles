@@ -395,6 +395,8 @@ window BeckyMailList   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:Sy
 		  C-End	&Wait(100) \
 		  S-TAB	&Wait(100) \
 		  Space			# 次の未読記事へのジャンプ
+  key H		= A-Left		# 直前に読んだ記事
+  key L		= A-Right		# 直後に読んだ記事
 
 window BeckyMailRead   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:#32770/ : BeckyMove
   key S-G	= C-End
