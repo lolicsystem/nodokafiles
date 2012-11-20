@@ -391,6 +391,10 @@ window BeckyMailList   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:Sy
   key C-K	= &Default
   key C-H	= &Default		# クエリー検索
   key C-Space	= &Prefix(BeckyMark)	# Mark
+  key N		= TAB	&Wait(100) \
+		  C-End	&Wait(100) \
+		  S-TAB	&Wait(100) \
+		  Space			# 次の未読記事へのジャンプ
 
 window BeckyMailRead   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:#32770/ : BeckyMove
   key S-G	= C-End
