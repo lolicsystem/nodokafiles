@@ -711,7 +711,7 @@ window CLIPStudioPaintEdit /CLIPStudioPaint\.exe:.*:ComboBox/ : EmacsEdit
 
 ## Visual C++ 2010 Express ....................................................
 
-keymap2 VC++C-Q : EmacsEdit
+keymap2 VC++C-Q : EmacsEdit = &Ignore &Prefix(VC++C-Q)
  event prefixed		= &HelpMessage("VC++", \
 	"J\tStep Over\r\n" \
 	"S-J, I\tStep Into\r\n" \
@@ -728,6 +728,9 @@ keymap2 VC++C-Q : EmacsEdit
 
  key C-P	= Up		&Prefix(VC++C-Q)
  key C-N	= Down		&Prefix(VC++C-Q)
+ key C-F	= Right		&Prefix(VC++C-Q)
+ key C-B	= Left		&Prefix(VC++C-Q)
+ key W		= &Default
 
  key C-Q C-G Esc= &HelpMessage		# JKモードから脱出
 
