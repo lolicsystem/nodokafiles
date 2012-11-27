@@ -433,18 +433,15 @@ keymap2 PowerPointC-Q : EmacsEdit
  key K		= Up   &Prefix(PowerPointC-Q)
  key C-Q C-G Esc= &HelpMessage		# JKモードから脱出
  key C-X	= &HelpMessage &Prefix(PowerPointC-X)
- key C-W	= &HelpMessage LAlt F C	# 文書を閉じる
  key S-G	= C-End &Prefix(PowerPointC-Q)
  key G		= &Prefix(PowerPointG)
 
 window	PowerPoint /POWERPNT\.EXE/ : EmacsEdit
  key C-X	= &Prefix(PowerPointC-X)
- key C-W	= LAlt F C		# 文書を閉じる
  key C-Q	= &Prefix(PowerPointC-Q) #JKモードに突入
 
 window	PowerPoint2 /POWERPNT\.EXE:PP9FrameClass.*/ : EmacsEdit
  key C-X	= &Prefix(PowerPointC-X)
- key C-W	= LAlt F C		# 文書を閉じる
 
 # スライドショー時にJKで次、前
 window  PowerPointSlideShow /POWERPNT\.EXE:screenClass:paneClassDC/ : EmacsEdit
