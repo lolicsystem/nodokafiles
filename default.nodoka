@@ -423,6 +423,8 @@ keymap2	PowerPointC-X : GeneralC-X
  key C-C	= $WindowClose		# 終了(X)
 
 keymap2	PowerPointG
+ event prefixed		= &HelpMessage("PowerPoint G...", \
+	"G\t最初のページ")
  key G		= C-Home &Prefix(PowerPointC-Q)		# 文頭(G G)
 
 keymap2 PowerPointC-Q : EmacsEdit
