@@ -743,4 +743,6 @@ window VC++ /VCExpress\.exe/ : EmacsEdit
 
 ## PuTTY (設定画面のみ) .......................................................
 
+window PuTTY /putty\.exe/
+
 window PuTTYConfigBox /putty\.exe:PuTTYConfigBox/ : EmacsEdit
