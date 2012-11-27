@@ -434,7 +434,6 @@ keymap2 PowerPointC-Q : EmacsEdit
  key J		= Down &Prefix(PowerPointC-Q)
  key K		= Up   &Prefix(PowerPointC-Q)
  key C-Q C-G Esc= &HelpMessage		# JKモードから脱出
- key C-X	= &HelpMessage &Prefix(PowerPointC-X)
  key S-G	= C-End &Prefix(PowerPointC-Q)
  key G		= &Prefix(PowerPointG)
 
