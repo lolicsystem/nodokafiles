@@ -428,7 +428,9 @@ keymap2	PowerPointG
 keymap2 PowerPointC-Q : EmacsEdit
  event prefixed		= &HelpMessage("PowerPoint", \
 	"J\t次ページ\r\n"	\
-	"K\t前ページ")
+	"K\t前ページ\r\n"	\
+	"G G\t最初のページ\r\n"	\
+	"S-G\t最後のページ")
  key J		= Down &Prefix(PowerPointC-Q)
  key K		= Up   &Prefix(PowerPointC-Q)
  key C-Q C-G Esc= &HelpMessage		# JKモードから脱出
