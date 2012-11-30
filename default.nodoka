@@ -185,6 +185,7 @@ keymap2	GeneralC-X : EmacsC-X
 # key C-C		= A-Q			# 終了(X)
  key C-C		= $WindowClose		# 終了(X)
  key C-Z		= &WindowMinimize	# 最小化
+ key C-Y		= C-Y			# Redo
 
 keymap2	GeneralG
  key G		= Home			# [ G G ]文頭
