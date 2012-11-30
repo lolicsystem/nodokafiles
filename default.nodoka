@@ -273,6 +273,11 @@ window	ExplorerList /EXPLORER.*:SHELLDLL_DefView:.*SysListView32$/ : SysListView
  key C-A-Z		= C-&WindowMaximize	# ウィンドウの全画面化
  key M-E		= $Explorer/show-folder-bar # フォルダを表示
  key C-Y		= C-V			# PASTE
+ key C-M		= Enter
+ key C-H		= BackSpace
+ key C-I		= A-V N			# アイコン表示
+ key C-O		= A-V D			# 詳細表示
+ key C-U		= A-V I			# 並べ替え
 
 window	ExplorerList2 /EXPLORER.*:SHELLDLL_DefView:.*DirectUIHWND$/ : ExplorerList
 
