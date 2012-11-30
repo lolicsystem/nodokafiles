@@ -123,7 +123,6 @@ keymap	EmacsEdit
  key C-U		= &Variable(0, 4) &Prefix(EmacsC-U)
  key C-X		= &Prefix(EmacsC-X)
  key C-Y		= C-V					# PASTE
- key C-Slash		= C-Z					# UNDO
  key M-U		= $EmacsEdit/upcase-word		# 大文字
  key M-L		= $EmacsEdit/downcase-word		# 小文字
 
