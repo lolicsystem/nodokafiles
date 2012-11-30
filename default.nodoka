@@ -179,8 +179,8 @@ keymap2	GeneralC-X : EmacsC-X
  key C-S		= C-S			# 上書き保存(S)
  key C-W		= LAlt F A		# 名前を付けて保存(A)...
  key C-F		= C-O			# 開く(O)...
-# key K			= C-N			# 新規作成(N)
- key K			= LAlt F C		# 閉じる(C)
+ key *N			= C-N			# 新規作成(N)
+ key *K			= LAlt F C		# 閉じる(C)
 # key C-C		= LAlt F X		# 終了(X)
 # key C-C		= A-Q			# 終了(X)
  key C-C		= $WindowClose		# 終了(X)
