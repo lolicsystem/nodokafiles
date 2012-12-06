@@ -391,6 +391,12 @@ window BeckyFolderList /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:#32770:SysTreeVie
   key C-K	= &Default
   key C-H	= &Default		# クエリー検索
   key S-R	= F2			# フォルダ名変更
+  key N		= TAB	&Wait(100) \
+		  TAB	&Wait(100) \
+		  C-End	&Wait(100) \
+		  S-TAB	&Wait(100) \
+		  S-TAB	&Wait(100) \
+		  Space			# 次の未読記事へのジャンプ
 
 window BeckyMailList   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:SysListView32$/ : BeckyMove
   key S-G	= End
