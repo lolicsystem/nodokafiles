@@ -412,6 +412,7 @@ window BeckyMailList   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:Sy
   key L		= A-Right		# 直後に読んだ記事
   key S-H I	= Left			# ツリーを幹方向へ
   key S-L O	= Right			# ツリーを枝方向へ
+  key R		= A-V R			# 関連メールON/OFF
 
 window BeckyMailRead   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:#32770/ : BeckyMove
   key S-G	= C-End
