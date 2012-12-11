@@ -761,3 +761,9 @@ window VC++ /VCExpress\.exe/ : EmacsEdit
 window PuTTY /putty\.exe/
 
 window PuTTYConfigBox /putty\.exe:PuTTYConfigBox/ : EmacsEdit
+
+
+## Eclipse ....................................................................
+
+window Eclipse /eclipse\.exe/ : EmacsEdit
+ key C-X	= &Prefix(GeneralC-X)
