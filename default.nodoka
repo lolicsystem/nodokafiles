@@ -397,6 +397,8 @@ window BeckyFolderList /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:#32770:SysTreeVie
 		  S-TAB	&Wait(100) \
 		  S-TAB	&Wait(100) \
 		  Space			# 次の未読記事へのジャンプ
+  key R		= A-V R			# 関連メールON/OFF
+  key T		= A-V M			# ツリー表示ON/OFF
 
 window BeckyMailList   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:SysListView32$/ : BeckyMove
   key S-G	= End
