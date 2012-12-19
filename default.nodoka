@@ -468,6 +468,12 @@ window  PowerPointSlideShow /POWERPNT\.EXE:screenClass:paneClassDC/ : EmacsEdit
  key K		= Up
 
 
+## Microsoft WordPad ..........................................................
+
+window	WordPad /WORDPAD\.EXE/ : EmacsEdit
+ key C-X	= &Prefix(GeneralC-X)
+
+
 ## Microsoft Word .............................................................
 
 window	MicrosoftWord /WINWORD\.EXE:.*:_WwG$/ : EmacsEdit
