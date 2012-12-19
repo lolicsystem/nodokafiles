@@ -50,6 +50,12 @@ keymap Global
 # key W-Up		= &MouseMove(0, -16)	#	〃
 # key W-Down		= &MouseMove(0, 16)	#	〃
 #↑これらは、AeroSnapのキーバインドとバッティングするためコメントアウト
+ key W-h		= &MouseMove(-16, 0)	# マウスの移動
+ key W-l		= &MouseMove(16, 0)	#	〃   (本来はwindow lock)
+ key W-k		= &MouseMove(0, -16)	#	〃
+ key W-j		= &MouseMove(0, 16)	#	〃
+ key W-Enter		= LButton		# マウスクリック
+#↑これらは、AeroSnapのキーバインドとバッティングするためコメントアウト
  key W-A-C-Left		= &MouseMove(-1, 0)	#	〃
  key W-A-C-Right	= &MouseMove(1, 0)	#	〃
  key W-A-C-Up		= &MouseMove(0, -1)	#	〃
