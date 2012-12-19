@@ -767,3 +767,9 @@ window PuTTYConfigBox /putty\.exe:PuTTYConfigBox/ : EmacsEdit
 
 window Eclipse /eclipse\.exe/ : EmacsEdit
  key C-X	= &Prefix(GeneralC-X)
+
+window LinuxEclipse ( /XWin\.exe/ && /Eclipse/ ) : Eclipse
+ key C-K	= &Wait(10) &EmacsEditKillLineFunc \
+		  &Wait(10) S-End \
+		  &Wait(10) C-X \
+		  &Wait(10) &EmacsEditKillLinePred((Delete), (Return Left))
