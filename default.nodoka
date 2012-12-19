@@ -445,12 +445,12 @@ keymap2	PowerPointG = &Prefix(PowerPointC-Q)
 
 keymap2 PowerPointC-Q = &Prefix(PowerPointC-Q)
  event prefixed		= &HelpMessage("PowerPoint", \
-	"J\t次ページ\r\n"	\
-	"K\t前ページ\r\n"	\
+	"J Spc\t次ページ\r\n"	\
+	"K S-Spc\t前ページ\r\n"	\
 	"G G\t最初のページ\r\n"	\
 	"S-G\t最後のページ")
- key J		= Down &Prefix(PowerPointC-Q)
- key K		= Up   &Prefix(PowerPointC-Q)
+ key J Space	= Down &Prefix(PowerPointC-Q)
+ key K S-Space	= Up   &Prefix(PowerPointC-Q)
  key C-Q C-G Esc= &HelpMessage		# JKモードから脱出
  key S-G	= C-End &Prefix(PowerPointC-Q)
  key G		= &Prefix(PowerPointG)
