@@ -777,6 +777,12 @@ window PuTTY /putty\.exe/
 window PuTTYConfigBox /putty\.exe:PuTTYConfigBox/ : EmacsEdit
 
 
+## Cygwin-X ...................................................................
+
+window XWin /XWin\.exe/			# Cygwin-Xのターミナル等では
+					# デフォルト設定に戻す
+
+
 ## Eclipse ....................................................................
 
 window Eclipse /eclipse\.exe/ : EmacsEdit
