@@ -136,6 +136,7 @@ keymap2	EmacsMark
  key C-F		= S-Right	&Prefix(EmacsMark)	# →
  key M-F		= S-C-Right	&Prefix(EmacsMark)	# →(単語)
  key C-G		= $EmacsMark/cancel &Undefined		# キャンセル
+ key C-K		= Left Right $EmacsEdit/kill-line	# 行末まで削除
  key C-N		= S-Down	&Prefix(EmacsMark)	# ↓
  key C-P		= S-Up		&Prefix(EmacsMark)	# ↑
  key C-V		= S-Next	&Prefix(EmacsMark)	# 次頁
@@ -183,6 +184,7 @@ keymap2	EmacsMark2 : EmacsEdit = $EmacsMark2/cancel &KeymapWindow
  key C-F		= S-Right	&Prefix(EmacsMark2)	# →
  key M-F		= S-C-Right	&Prefix(EmacsMark2)	# →(単語)
  key C-G		= $EmacsMark2/cancel &Undefined		# キャンセル
+ key C-K		= Left Right $EmacsEdit/kill-line	# 行末まで削除
  key C-N		= S-Down	&Prefix(EmacsMark2)	# ↓
  key C-P		= S-Up		&Prefix(EmacsMark2)	# ↑
  key C-V		= S-Next	&Prefix(EmacsMark2)	# 次頁

@@ -513,6 +513,7 @@ keymap2	ExcelEmacsMark : EmacsEdit = $ExcelEmacsMark/cancel &KeymapWindow
  key C-F		= S-Right	&Prefix(ExcelEmacsMark)	# →
  key M-F		= S-C-Right	&Prefix(ExcelEmacsMark)	# →(単語)
  key C-G		= $ExcelEmacsMark/cancel &Undefined		# キャンセル
+ key C-K		= $ExcelEmacsMark/cancel $EmacsEdit/kill-line	# 行末まで削除
  key C-N		= S-Down	&Prefix(ExcelEmacsMark)	# ↓
  key C-P		= S-Up		&Prefix(ExcelEmacsMark)	# ↑
  key C-V		= S-Next	&Prefix(ExcelEmacsMark)	# 次頁
