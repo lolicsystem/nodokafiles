@@ -605,6 +605,11 @@ window Chrome /chrome.exe/ : EmacsEdit
  key C-X	= &Prefix(GeneralC-X)
 
 
+## Google Desktop .............................................................
+
+window GoogleDesktop /GoogleDesktop.exe/ : EmacsEdit
+
+
 ## Jane Style .................................................................
 
 window Jane /Jane2ch\.exe/ : EmacsEdit
