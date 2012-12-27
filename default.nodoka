@@ -788,11 +788,45 @@ window XWin /XWin\.exe/			# Cygwin-Xのターミナル等では
 
 ## Eclipse ....................................................................
 
+keymap2 EclipseC-Q = &Prefix(EclipseC-Q)
+ event prefixed		= &HelpMessage("Eclipse", \
+	"R\tResume\r\n" \
+	"J\tStep Over\r\n" \
+	"S-J, I\tStep Into\r\n" \
+	"K, O\tStep Out\r\n" \
+	"H\t前の画面\r\n" \
+	"L\t次の画面\r\n" \
+	".\tここまで実行")
+ key S-J I	= F5		&Prefix(EclipseC-Q)	# Step In
+ key J		= F6		&Prefix(EclipseC-Q)	# Step Over
+ key K   O	= F7		&Prefix(EclipseC-Q)	# Step Out
+ key R		= F8		&Prefix(EclipseC-Q)	# Resume
+ key H		= A-Left	&Prefix(EclipseC-Q)	# Back History
+ key L		= A-Right	&Prefix(EclipseC-Q)	# Forward History
+ key Period	= C-R		&Prefix(EclipseC-Q)	# Run to line
+
+ key C-P	= Up		&Prefix(EclipseC-Q)
+ key C-N	= Down		&Prefix(EclipseC-Q)
+ key C-F	= Right		&Prefix(EclipseC-Q)
+ key C-B	= Left		&Prefix(EclipseC-Q)
+
+ key C-Q C-G Esc= &HelpMessage		# JKモードから脱出
+
 window Eclipse /eclipse\.exe/ : EmacsEdit
  key C-X	= &Prefix(GeneralC-X)
+ key C-Q	= &Prefix(EclipseC-Q)	#JKモードに突入
+ key C-R	= F11			# Debug
+ key S-C-R	= C-F11			# Run
+ key S-C-C	= A-P N			# Clean...
+ key S-C-B	= A-P B			# Build Project
 
+#	Linux-Eclipse側で、Defaultキーバインドが選択されていることが前提
+#	(Window>Preference>General>Key メニューで設定)
+#	Eclipse側のEmacs風キーバインドは中途半端なので。
+#
 window LinuxEclipse ( /XWin\.exe/ && /Eclipse/ ) : Eclipse
- key C-K	= &Wait(10) &EmacsEditKillLineFunc \
-		  &Wait(10) S-End \
-		  &Wait(10) C-X \
-		  &Wait(10) &EmacsEditKillLinePred((Delete), (Return Left))
+#  key C-K	= &Wait(10) &EmacsEditKillLineFunc \
+# 		  &Wait(10) S-End \
+# 		  &Wait(10) C-X \
+# 		  &Wait(10) &EmacsEditKillLinePred((Delete), (Return Left))
+ key C-K	= &EmacsEditKillLineFunc S-End C-X &EmacsEditKillLinePred((Delete), (Return Left))
