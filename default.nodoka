@@ -281,7 +281,7 @@ window	ExplorerList /EXPLORER.*:SHELLDLL_DefView:.*SysListView32$/ : SysListView
  key C-Y		= C-V			# PASTE
  key C-M		= Enter
  key C-H		= BackSpace
- key C-I		= A-V N			# アイコン表示
+ key C-I		= A-V S			# 並べて表示(アイコン表示)
  key C-O		= A-V D			# 詳細表示
  key C-U		= A-V I			# 並べ替え
 
