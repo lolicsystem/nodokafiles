@@ -573,6 +573,7 @@ window	ExcelCell /EXCEL\.EXE:XLMAIN:XLDESK:EXCEL7/ : Excel
 
 window	MicrosoftVisio /VISIO\.EXE/ : EmacsEdit
  key C-X	= &Prefix(GeneralC-X)
+ key S-C-D	= C-D			# 複製
 
 
 ## Mozilla ....................................................................
