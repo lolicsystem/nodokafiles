@@ -883,3 +883,10 @@ window LinuxEclipse ( /XWin\.exe/ && /Eclipse/ ) : Eclipse
 # 		  &Wait(10) C-X \
 # 		  &Wait(10) &EmacsEditKillLinePred((Delete), (Return Left))
  key C-K	= &EmacsEditKillLineFunc S-End C-X &EmacsEditKillLinePred((Delete), (Return Left))
+
+
+## LibreOffice ................................................................
+
+window LibreOffice ( /XWin\.exe/ && /Libre/ ) : EmacsEdit
+ key C-X	= &Prefix(GeneralC-X)
+ key C-K	= &EmacsEditKillLineFunc S-End C-X &EmacsEditKillLinePred((Delete), (Return Left))
