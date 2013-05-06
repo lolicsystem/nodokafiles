@@ -567,6 +567,9 @@ keymap2	ExcelEmacsMark : EmacsEdit = $ExcelEmacsMark/cancel &KeymapWindow
  key M-P		= End S-Up	&Prefix(ExcelEmacsMark)
  key M-N		= End S-Down	&Prefix(ExcelEmacsMark)
  key C-C		= &Default
+ key Delete C-D		= Delete
+ key C-Y		= C-V
+ key S-C-B		= C-B
  if ( MAP-ESCAPE-TO-META )
    key Escape		= &Prefix(ExcelEmacsMarkEscape) &EditNextModifier(M-)
    if ( KBD109 ) and ( ! KBD104on109 )
@@ -575,7 +578,7 @@ keymap2	ExcelEmacsMark : EmacsEdit = $ExcelEmacsMark/cancel &KeymapWindow
  endif
 
 keymap	ExcelEmacsEdit : EmacsEdit
- key C-Space		=  &Prefix(ExcelEmacsMark)		# Mark
+ key C-Space		= &Prefix(ExcelEmacsMark)	# Mark
 
 keymap2 ExcelEscape : Global = &KeymapParent
  event prefixed		= &HelpMessage("Excel", "ESC-")
@@ -597,14 +600,25 @@ window	Excel /EXCEL\.EXE:XLMAIN/ : ExcelEmacsEdit
  key Escape	= &Prefix(ExcelEscape) &EditNextModifier(M-)
  key C-X	= &Prefix(GeneralC-X)
  key C-S-B	= C-B			# 太字
+ key S-C-A	= C-A			# 全選択（機能しないなぜ）
+ key C-Enter S-Enter	= A-Enter
+
+window	Excel /EXCEL\.EXE:XLMAIN:EXCEL/ : ExcelEmacsEdit
+ key Escape	= &Prefix(ExcelEscape) &EditNextModifier(M-)
+ key C-X	= &Prefix(GeneralC-X)
+ key C-S-B	= C-B			# 太字
+ key S-C-A	= C-A			# 全選択（機能しないなぜ）
+ key C-Enter S-Enter	= A-Enter
 
 window	ExcelCell /EXCEL\.EXE:XLMAIN:XLDESK:EXCEL7/ : Excel
  key Escape	= &Prefix(ExcelEscape) &EditNextModifier(M-)
  key Home	= &Default		# 文頭
  key End	= &Default		# 文末
- key S-R	= F2			# セルの内容変更
+ key S-Enter A-Enter C-Enter = F2	# セルの内容変更
  key C-A	= End Left		# 行頭を、記入されてる一番左のセルと解釈
  key C-E	= End Right		# 行末を、記入されてる一番右のセルと解釈
+ key C-Tab S-C-N *S-C-J	= C-PageDown	# 次のタブ
+ key S-C-Tab S-C-P *S-C-K= C-PageUp	# 前のタブ
 
 
 ## Microsoft Visio ............................................................
