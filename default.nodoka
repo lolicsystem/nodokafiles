@@ -52,6 +52,7 @@ keymap Global
 #↑これらは、AeroSnapのキーバインドとバッティングするためコメントアウト
  key W-h		= &MouseMove(-16, 0)	# マウスの移動
  key W-l		= &MouseMove(16, 0)	#	〃   (本来はwindow lock)
+ key C-W-l		= W-l			# window lock退避
  key W-k		= &MouseMove(0, -16)	#	〃
  key W-j		= &MouseMove(0, 16)	#	〃
  key W-Enter		= LButton		# マウスクリック
