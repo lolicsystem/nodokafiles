@@ -803,9 +803,9 @@ window Poser /PoserJ\.exe/
 
 window ComicStudioPageEdit /CS_EX\.exe/
   # CS側で、N=鉛筆、R=ペン、T=マジックにバインドしてるものとする。
-  key N = _4 N		# 鉛筆 の時は描画色は黒(の代替色)
-  key R = _4 R		# ペン の時は    〃       〃
-  key T = _5 T		# マジックの時は描画色は白(の代替色)
+#  key N = _4 N		# 鉛筆 の時は描画色は黒(の代替色)
+#  key R = _4 R		# ペン の時は    〃       〃
+#  key T = _5 T		# マジックの時は描画色は白(の代替色)
 
 window ComicStudioTreeView /CS_EX\.exe.*:SysTreeView32/
 
