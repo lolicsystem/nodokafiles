@@ -388,6 +388,7 @@ keymap  BeckyMove : EmacsEdit
   key C-X	= &Prefix(BeckyC-X)
   key C-U	= A-V A-W		# ヘッダの表示
   key C-W	= &Default		# 転送
+  key C-S	= F12			# 通常検索ではなく、見出し検索
 
 keymap2	BeckyMark : EmacsMark
   key C-B	= C-B Left Right	# 選択中の既読化
@@ -400,11 +401,11 @@ window BeckyFolderList /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:#32770:SysTreeVie
   key C-K	= &Default
   key C-H	= &Default		# クエリー検索
   key S-R	= F2			# フォルダ名変更
-  key N		= TAB	&Wait(100) \
-		  TAB	&Wait(100) \
+  key N		= Tab	&Wait(100) \
+		  Tab	&Wait(100) \
 		  C-End	&Wait(100) \
-		  S-TAB	&Wait(100) \
-		  S-TAB	&Wait(100) \
+		  S-Tab	&Wait(100) \
+		  S-Tab	&Wait(100) \
 		  Space			# 次の未読記事へのジャンプ
   key R		= A-V R			# 関連メールON/OFF
   key T		= A-V M			# ツリー表示ON/OFF
@@ -415,21 +416,24 @@ window BeckyMailList   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:Sy
   key C-K	= &Default
   key C-H	= &Default		# クエリー検索
   key C-Space	= &Prefix(BeckyMark)	# Mark
-  key N		= TAB	&Wait(100) \
-		  C-End	&Wait(100) \
-		  S-TAB	&Wait(100) \
+  key N		= Tab	&Wait(10) \
+		  C-End	&Wait(10) \
+		  S-Tab	&Wait(10) \
 		  Space			# 次の未読記事へのジャンプ
-  key H		= A-Left		# 直前に読んだ記事
-  key L		= A-Right		# 直後に読んだ記事
-  key S-H I	= Left			# ツリーを幹方向へ
-  key S-L O	= Right			# ツリーを枝方向へ
+					# （Wait(100)だと、IME-ONのときにうまく動作しない。）
+  key S-H A-H	= A-Left		# 直前に読んだ記事
+  key S-L A-L	= A-Right		# 直後に読んだ記事
+  key H		= Left			# ツリーを幹方向へ
+  key L		= Right			# ツリーを枝方向へ
   key R		= A-V R			# 関連メールON/OFF
   key T		= A-V M			# ツリー表示ON/OFF
+  key C-R	= LAlt M Y A		# C-R で全ユーザーに返信
 
 window BeckyMailRead   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:#32770/ : BeckyMove
   key S-G	= C-End
   key G         = &Prefix(BeckyG)
   key C-H	= &Default		# クエリー検索
+  key C-R	= LAlt M Y A		# C-R で全ユーザーに返信
 
 keymap2	BeckyCompose-X : BeckyC-X
  key C-S	= C-S-G			# 直ちに送信
@@ -437,6 +441,10 @@ keymap2	BeckyCompose-X : BeckyC-X
 window BeckyCompose /B2\.exe:Becky2ComposeFrame:/ : EmacsEdit
   key C-X	= &Prefix(BeckyCompose-X)
   key End	= &Default
+
+window BeckyInstantSearch /B2\.exe:Becky2MainFrame:#32770:Edit/ : EmacsEdit
+  key C-X	= &Prefix(GeneralC-X)
+  key C-S	= C-S			# 見出し検索窓の中でC-Sすると通常検索
 
 window BeckyEdit    /B2\.exe:Becky2MainFrame:.*:Edit/ : EmacsEdit
   key C-X	= &Prefix(GeneralC-X)
