@@ -473,6 +473,7 @@ keymap2 PowerPointC-Q = &Prefix(PowerPointC-Q)
  key C-Q C-G Esc= &HelpMessage		# JKモードから脱出
  key S-G	= C-End &Prefix(PowerPointC-Q)
  key G		= &Prefix(PowerPointG)
+ key C-X	= &HelpMessage &Prefix(PowerPointC-X) # JKモードから抜けてC-Xに
 
 window	PowerPoint /POWERPNT\.EXE/ : EmacsEdit
  key C-X	= &Prefix(PowerPointC-X)
