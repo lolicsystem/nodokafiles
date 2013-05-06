@@ -496,9 +496,32 @@ window	WordPad /WORDPAD\.EXE/ : EmacsEdit
 
 ## Microsoft Word .............................................................
 
+keymap2 WordC-Q = &Prefix(WordC-Q)	# keymap2相互呼び出しのため、prototype
+
+keymap2	WordG = &Prefix(WordC-Q)
+ event prefixed		= &HelpMessage("Word G...", \
+	"G\t最初のページ")
+ key G		= C-Home &Prefix(WordC-Q)		# 文頭(G G)
+
+keymap2 WordC-Q = &Prefix(WordC-Q)
+ event prefixed		= &HelpMessage("Word", \
+	"J Spc\t次ページ\r\n"	\
+	"K S-Spc\t前ページ\r\n"	\
+	"G G\t最初のページ\r\n"	\
+	"S-G\t最後のページ")
+ key C-N	= Down &Prefix(WordC-Q)
+ key C-P	= Up   &Prefix(WordC-Q)
+ key J Space	= PageDown &Prefix(WordC-Q)
+ key K S-Space	= PageUp   &Prefix(WordC-Q)
+ key C-Q C-G Esc= &HelpMessage		# JKモードから脱出
+ key S-G	= C-End &Prefix(WordC-Q)
+ key G		= &Prefix(WordG)
+ key C-X	= &HelpMessage &Prefix(GeneralC-X) # JKモードから抜けてC-Xに
+
 window	MicrosoftWord /WINWORD\.EXE:.*:_WwG$/ : EmacsEdit
  key C-X	= &Prefix(GeneralC-X)
  key C-S-B	= C-B			# 太字
+ key C-Q	= &Prefix(WordC-Q) #JKモードに突入
 
  # C-K時、行末の改行を削除しないように、最後の1文字を削除対象から外す。
  # ただし、以下の方法だと、折り返し行に関しては、「改行ではない行末文字」
