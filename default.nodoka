@@ -742,6 +742,11 @@ window	TeraTerm /TTermPRO\.exe:VTWin32$/ : Global
 
 ## Acrobat Reader .............................................................
 ## http://www.adobe.co.jp/support/custsupport/library/acrwin.html
+##
+## 注意！： Adobe Redaer X および XI を使用すると、
+## hWnd の取得がなぜかのどかからできない。つまり、のどかが使えない。
+## → 一度、のどか掲示板で訊いてみる。
+##
 
 window AcrobatReader /Acro.*\.exe:.*:AVL_AVView$/ : EmacsMove
  key C-X	= &Prefix(GeneralC-X)
