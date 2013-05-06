@@ -732,6 +732,11 @@ window PicasaPhotoViewer /PicasaPhotoViewer\.exe/ : EmacsEdit
 ## Photoshop.................................................................
 
 window Photoshop /Photoshop\.exe/
+ key C-Z		= A-C-Z			# Undo -> Back History
+ key C-Y		= S-C-Z			# Undo -> Forward History
+
+window PhotoshopDialog /Photoshop\.exe.*:#32770/ : EmacsEdit
+ key C-X		= &Prefix(GeneralC-X)
 
 
 ## IE ....................................................................
