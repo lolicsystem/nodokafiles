@@ -628,8 +628,12 @@ window	MicrosoftVisio /VISIO\.EXE/ : EmacsEdit
  key S-C-D	= C-D			# 複製
 
 
-## Mozilla ....................................................................
+## Mozilla Firefox ............................................................
 ## http://www.mozilla.org/
+
+keymap2 MozillaC-Q : EmacsEdit
+ event prefixed		= &HelpMessage("Firefox", "H\t履歴")
+ key H			= &HelpMessage C-S-H	# Show History
 
 window	MozillaMain /:MozillaWindowClass/ : EmacsEdit
  key C-X		= &Prefix(GeneralC-X)
@@ -640,7 +644,12 @@ window	MozillaMain /:MozillaWindowClass/ : EmacsEdit
  key C-Slash		= C-K			# Web検索
  key C-Period		= C-L			# ロケーションバーに移動
  key S-C-C		= &Default		# Cache Viewer
-
+ key C-Q		= &Prefix(MozillaC-Q)
+ # 以下は、FirefoxExtensionにて"VimFx"を入れているときだけ有効にすること。
+ # VimFxを使用していると、C-Sがのどかで変換された結果のC-Fが、
+ # ページスクロールに割り当たってしまう。
+ # VimFxでは検索を . / a. a/ でやらせたいっぽいが、標準の検索を使いたい時のために。
+ # key C-S		= LAlt E &Wait(100) F
 
 window  MozillaDialog /:MozillaDialogClass/ : EmacsEdit
 
