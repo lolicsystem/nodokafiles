@@ -321,6 +321,11 @@ keymap Emacsen : Global
  endif
 
 window	Meadow	/:Meadow$/ : Emacsen
+  key S-C-F		= Right			# keisen-mode 描画用
+  key S-C-B		= Left			# keisen-mode 描画用
+  key S-C-P		= Up			# keisen-mode 描画用
+  key S-C-N		= Down			# keisen-mode 描画用
+
 window	MULE	/:MULE$/   : Emacsen
 window	Emacs	/:Emacs$/  : Emacsen
 window	XVision	/xvl\.exe/ : Emacsen
