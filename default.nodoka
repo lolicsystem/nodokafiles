@@ -329,6 +329,7 @@ window	Meadow	/:Meadow$/ : Emacsen
 window	MULE	/:MULE$/   : Emacsen
 window	Emacs	/:Emacs$/  : Emacsen
 window	XVision	/xvl\.exe/ : Emacsen
+window  Emacs24 /emacs\.exe/	: Meadow
 
 
 ## mintty ......................................................................
