@@ -363,8 +363,13 @@ window	Notepad /:Notepad:Edit$/ : EmacsEdit
 ## Becky! Internet Mail .......................................................
 ## http://www.rimarts.co.jp/index-j.html
 
+keymap2 BeckyMark : EmacsMark = &Prefix(BeckyMark)	# keymap2相互呼び出しのため、prototype
+
 keymap2	BeckyG
- key G		= C-Home			# [ G G ]文頭
+ key G		= Home			# [ G G ]文頭
+
+keymap2	BeckyMarkG
+ key G		= S-Home &Prefix(BeckyMark) # [ G G ]文頭（選択中）
 
 keymap2	BeckyC-X : GeneralC-X
  key C-J	= C-K C-J			# [ C-X C-J ] 折り返しON/OFF
@@ -391,12 +396,14 @@ keymap  BeckyMove : EmacsEdit
   key C-W	= &Default		# 転送
   key C-S	= F12			# 通常検索ではなく、見出し検索
 
-keymap2	BeckyMark : EmacsMark
-  key C-B	= C-B Left Right	# 選択中の既読化
-  key S-C-B	= S-C-B Left Right	# 選択中の未読化
-  key J		= S-Down &Prefix(BeckyMark)	# ↓
-  key K		= S-Up	 &Prefix(BeckyMark)	# ↑
-
+keymap2	BeckyMark : EmacsMark = &Prefix(BeckyMark)
+  key G			=        &Prefix(BeckyMarkG)	# 選択中の文頭移動
+  key J C-N		= S-Down &Prefix(BeckyMark)	# ↓
+  key K C-P		= S-Up	 &Prefix(BeckyMark)	# ↑
+  key S-G		= S-End  &Prefix(BeckyMark)	# 選択中の文末移動
+  key C-B		= C-B				# 選択中の既読化
+  key S-C-B		= S-C-B				# 選択中の未読化
+  key C-Q C-G Esc	= &HelpMessage Down Up		# BeckyMarkから脱出
 
 window BeckyFolderList /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:#32770:SysTreeView32$/ : BeckyMove
   key C-K	= &Default
@@ -413,7 +420,7 @@ window BeckyFolderList /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:#32770:SysTreeVie
 
 window BeckyMailList   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:SysListView32$/ : BeckyMove
   key S-G	= End
-  key G         = &Prefix(GeneralG)
+  key G         = &Prefix(BeckyG)
   key C-K	= &Default
   key C-H	= &Default		# クエリー検索
   key C-Space	= &Prefix(BeckyMark)	# Mark
@@ -430,9 +437,12 @@ window BeckyMailList   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:Sy
   key T		= A-V M			# ツリー表示ON/OFF
   key C-R	= LAlt M Y A		# C-R で全ユーザーに返信
 
+keymap2	BeckyGonMailRead
+ key G		= C-Home		# [ G G ]文頭
+
 window BeckyMailRead   /B2\.exe:Becky2MainFrame:AfxMDIFrame42s:AfxMDIFrame42s:#32770/ : BeckyMove
   key S-G	= C-End
-  key G         = &Prefix(BeckyG)
+  key G         = &Prefix(BeckyGonMailRead)
   key C-H	= &Default		# クエリー検索
   key C-R	= LAlt M Y A		# C-R で全ユーザーに返信
 
